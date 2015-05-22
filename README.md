@@ -5,21 +5,21 @@ This repo contains the frontend for honbot.com. The backend can be found in [hon
 
 ##Installation
 1. Install global required tools
-```bash
-npm install -g gulp bower
-```
+  ```bash
+  npm install -g gulp bower
+  ```
 2. Install local package requirements
-```bash
-npm install
-```
+  ```bash
+  npm install
+  ```
 3. Install honbot frontend requirements
-```bash
-bower install
-```
+  ```bash
+  bower install
+  ```
 4. Start local server
-```bash
-gulp serve
-```
+  ```bash
+  gulp serve
+  ```
 
 ##Commands
 ```bash
