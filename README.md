@@ -22,6 +22,7 @@ This repo contains the frontend for honbot.com. The backend can be found in [hon
   ```
 
 ##Commands
+Project was generated with [gulp-angular](https://github.com/Swiip/generator-gulp-angular).
 ```bash
 # Start local server
 gulp serve
@@ -32,7 +33,7 @@ gulp dist
 ```
 
 ##Helper Scripts
-These are used to update images and herodata
+These are used to update images and bits of data. Written in python.
 #### large_hero
 Run this to download all large image cutouts for the homepage. Will output a txt file with paths to images. Place this in largeHero.js.
 Also downloads hero icons and creates and object of hero names. Using pngquant to squash the images never hurts.

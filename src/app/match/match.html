@@ -91,7 +91,8 @@
                         <td>
                             <a ng-repeat="item in player.items track by $index"
                                ng-href="/item/{{ item }}/"
-                               data-title="{{ctrl.items[item].name}}"
+                               data-title="<span>{{ctrl.items[item].name}}</span> <span style='color: rgb(255,167,0);'>{{ctrl.items[item].cost}}</span>"
+                               data-html="True"
                                bs-tooltip>
                                 <img ng-if="item" ng-src="assets/images/items/{{ item }}.jpg" width="30">
                             </a>
