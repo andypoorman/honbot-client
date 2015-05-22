@@ -7,13 +7,13 @@
             <div class="media-body">
                 <h2 class="media-heading">{{ ctrl.s.nickname || ctrl.nickname }}</h2>
                 <div class="btn-group" style="margin-top: 3px;">
-                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.m != 'rnk', 'btn-info': ctrl.m == 'rnk'}" ng-click="ctrl.changeMode('/')">Ranked</a>
-                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.m != 'cs', 'btn-info': ctrl.m == 'cs'}" ng-click="ctrl.changeMode('/c/')">Casual</a>
-                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.m != 'acc', 'btn-info': ctrl.m == 'acc'}" ng-click="ctrl.changeMode('/p/')">Public</a>
+                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.m != 'rnk', 'btn-info': ctrl.m == 'rnk'}" ng-click="ctrl.PlayerService.changeMode(ctrl.page, '/', ctrl.s.nickname)">Ranked</a>
+                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.m != 'cs', 'btn-info': ctrl.m == 'cs'}" ng-click="ctrl.PlayerService.changeMode(ctrl.page, '/c/', ctrl.s.nickname)">Casual</a>
+                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.m != 'acc', 'btn-info': ctrl.m == 'acc'}" ng-click="ctrl.PlayerService.changeMode(ctrl.page, '/p/', ctrl.s.nickname)">Public</a>
                 </div>
                 <div class="btn-group" style="margin-top: 3px; margin-left: 5px;">
-                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.page != 'stats', 'btn-warning': ctrl.page == 'stats'}" ng-click="ctrl.changePage('player')">Stats</a>
-                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.page != 'analytics', 'btn-warning': ctrl.page == 'analytics'}" ng-click="ctrl.changePage('analytics')">Analytics</a>
+                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.page != 'player', 'btn-warning': ctrl.page == 'player'}" ng-click="ctrl.PlayerService.changePage('player', ctrl.s.nickname)">Stats</a>
+                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.page != 'analytics', 'btn-warning': ctrl.page == 'analytics'}" ng-click="ctrl.PlayerService.changePage('analytics', ctrl.s.nickname)">Analytics</a>
                 </div>
             </div>
         </div>

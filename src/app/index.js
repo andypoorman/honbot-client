@@ -3,6 +3,7 @@
 import MainCtrl from './main/main.controller';
 import NavbarCtrl from './components/navbar/navbar.controller';
 import PlayerCtrl from './player/player.controller';
+import PlayerService from './player/player.service';
 import AnalyticsCtrl from './analytics/analytics.controller';
 import HistoryCtrl from './player/history.controller';
 import MatchCtrl from './match/match.controller';
@@ -26,6 +27,7 @@ angular.module('client', ['ngRoute', 'mgcrea.ngStrap', 'angularMoment', 'btford.
     .service('BaseUrl', BaseUrl)
     .service('ApiService', ApiService)
     .service('ModeService', ModeService)
+    .service('PlayerService', PlayerService)
     .directive('adsense', adsense)
     .constant('largeHero', largeHero)
     .constant('itemList', itemList)

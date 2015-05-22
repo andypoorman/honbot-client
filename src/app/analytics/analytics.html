@@ -3,17 +3,13 @@
     <alert></alert>
     <div class="row">
         <div class="col-sm-12">
-            <adsense></adsense>
+            <!-- <adsense></adsense> -->
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
             <div ng-include="'app/player/player.head.html'"></div>
-            <div ng-include="'app/player/player.stats.html'"></div>
-            <adsense></adsense>
-        </div>
-        <div class="col-md-6 table-responsive">
-            <div ng-include="'app/player/player.history.html'"></div>
+            {{ ctrl.res }}
         </div>
     </div>
 </div>

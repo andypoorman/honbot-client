@@ -1,29 +1,14 @@
 'use strict';
 
 class PlayerCtrl {
-    constructor($routeParams, ApiService, ModeService, $location, $alert, BaseUrl) {
+    constructor($routeParams, ApiService, ModeService, $location, $alert, BaseUrl, PlayerService) {
         let vm = this;
         vm.m = ModeService.modeNameFromPath;
         vm.s = {};
         vm.BaseUrl = BaseUrl.host;
         vm.nickname = $routeParams.player;
-        vm.historyPage = 0;
-        vm.history = [];
-        vm.page = 'stats';
-
-        vm.changeMode = function(newmode) {
-            $location.path(`${newmode}player/${vm.nickname}/`);
-        };
-
-        vm.changePage = function(page) {
-            if (vm.m === 'rnk') {
-                $location.path(`/${page}/${vm.nickname}/`);
-            } else if (vm.m === 'cs') {
-                $location.path(`/c/${page}/${vm.nickname}/`);
-            } else if (vm.m === 'acc') {
-                $location.path(`/p/${page}/${vm.nickname}/`);
-            }
-        };
+        vm.page = 'player';
+        vm.PlayerService = PlayerService;
 
         ApiService.singlePlayer(vm.nickname).success(res => {
             vm.s = res;
@@ -50,6 +35,6 @@ class PlayerCtrl {
     }
 }
 
-PlayerCtrl.$inject = ['$routeParams', 'ApiService', 'ModeService', '$location', '$alert', 'BaseUrl'];
+PlayerCtrl.$inject = ['$routeParams', 'ApiService', 'ModeService', '$location', '$alert', 'BaseUrl', 'PlayerService'];
 
 export default PlayerCtrl;
