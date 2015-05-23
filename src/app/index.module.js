@@ -5,7 +5,7 @@ import routerConfig from './index.route';
 import runBlock from './index.run';
 
 import MainCtrl from './main/main.controller';
-import NavbarCtrl from './components/navbar/navbar.controller';
+import NavbarDirective from '../app/components/navbar/navbar.directive';
 import PlayerCtrl from './player/player.controller';
 import PlayerService from './player/player.service';
 import AnalyticsCtrl from './analytics/analytics.controller';
@@ -30,7 +30,6 @@ angular.module('client', ['ngRoute', 'mgcrea.ngStrap', 'angularMoment', 'btford.
     .run(runBlock)
 
     .controller('MainCtrl', MainCtrl)
-    .controller('NavbarCtrl', NavbarCtrl)
     .controller('PlayerCtrl', PlayerCtrl)
     .controller('AnalyticsCtrl', AnalyticsCtrl)
     .controller('MatchCtrl', MatchCtrl)
@@ -40,5 +39,5 @@ angular.module('client', ['ngRoute', 'mgcrea.ngStrap', 'angularMoment', 'btford.
     .service('ApiService', ApiService)
     .service('ModeService', ModeService)
     .service('PlayerService', PlayerService)
-    .directive('adsense', adsense);
-    
+    .directive('adsense', adsense)
+    .directive('navbar', () => new NavbarDirective());
