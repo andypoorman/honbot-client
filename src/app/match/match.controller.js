@@ -20,7 +20,6 @@ class MatchCtrl {
             {value: 'kills', label: 'Kills'},
             {value: 'deaths', label: 'Deaths'},
             {value: 'assists', label: 'Assists'},
-            {value: 'kdr', label: 'KDR'},
             {value: 'cs', label: 'CS'},
             {value: 'gpm', label: 'GPM'},
             {value: 'apm', label: 'APM'},
@@ -29,7 +28,7 @@ class MatchCtrl {
             {value: 'herodmg', label: 'Hero Damage'},
             {value: 'bdmg', label: 'Kills'},
         ];
-        $scope.selectedGraph = vm.options[5];
+        $scope.selectedGraph = vm.options[4];
 
         _.forEach(heroData, function(n) {
             vm.heroData[_.keys(n)[0]] = n[_.keys(n)[0]];
