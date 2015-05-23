@@ -1,7 +1,6 @@
-'use strict';
-
 class BaseUrl {
     constructor($location) {
+        'ngInject';
         if ($location.host() === 'localhost') {
             this.host = '//localhost:5000';
         } else {
@@ -9,7 +8,5 @@ class BaseUrl {
         }
     }
 }
-
-BaseUrl.$inject = ['$location'];
 
 export default BaseUrl;

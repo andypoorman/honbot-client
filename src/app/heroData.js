@@ -1,5 +1,3 @@
-'use strict';
-
 var heroData = {
   "Hero_Armadon": {
     "2": {

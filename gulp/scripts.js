@@ -15,7 +15,7 @@ function webpack(watch, callback) {
       preLoaders: [{ test: /\.js$/, exclude: /node_modules/, loader: 'jshint-loader'}],
       loaders: [{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}]
     },
-    output: { filename: 'index.js' }
+    output: { filename: 'index.module.js' }
   };
 
   if(watch) {
@@ -39,7 +39,7 @@ function webpack(watch, callback) {
     }
   };
 
-  return gulp.src(path.join(conf.paths.src, '/app/index.js'))
+  return gulp.src(path.join(conf.paths.src, '/app/index.module.js'))
     .pipe($.webpack(webpackOptions, null, webpackChangeHandler))
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app')));
 }

@@ -1,8 +1,7 @@
-'use strict';
-
 class ModeService {
 
     constructor($location) {
+        'ngInject';
         this.$location = $location;
     }
     get modeNameFromPath(){
@@ -16,7 +15,5 @@ class ModeService {
         return 'rnk';
     }
 }
-
-ModeService.$inject = ['$location'];
 
 export default ModeService;

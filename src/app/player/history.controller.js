@@ -1,7 +1,6 @@
-'use strict';
-
 class HistoryCtrl {
     constructor($routeParams, ApiService, ModeService, $location) {
+        'ngInject';
         let vm = this;
         vm.nickname = $routeParams.player;
         vm.historyPage = 0;
@@ -40,7 +39,5 @@ class HistoryCtrl {
         vm.more();
     }
 }
-
-HistoryCtrl.$inject = ['$routeParams', 'ApiService', 'ModeService', '$location'];
 
 export default HistoryCtrl;

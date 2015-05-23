@@ -1,8 +1,7 @@
-'use strict';
-
 class PlayerService {
 
     constructor($location, ModeService) {
+        'ngInject';
         this.$location = $location;
         this.m = ModeService.modeNameFromPath;
     }
@@ -20,7 +19,5 @@ class PlayerService {
     }
     
 }
-
-PlayerService.$inject = ['$location', 'ModeService'];
 
 export default PlayerService;

@@ -1,7 +1,6 @@
-'use strict';
-
 class AnalyticsCtrl {
     constructor($routeParams, ApiService, ModeService, $location, $alert, BaseUrl, PlayerService) {
+        'ngInject';
         let vm = this;
         vm.m = ModeService.modeNameFromPath;
         vm.s = {};
@@ -35,7 +34,5 @@ class AnalyticsCtrl {
         
     }
 }
-
-AnalyticsCtrl.$inject = ['$routeParams', 'ApiService', 'ModeService', '$location', '$alert', 'BaseUrl', 'PlayerService'];
 
 export default AnalyticsCtrl;

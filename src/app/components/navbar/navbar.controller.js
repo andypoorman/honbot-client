@@ -1,7 +1,6 @@
-'use strict';
-
 class NavbarCtrl {
     constructor($location) {
+        'ngInject';
         let vm = this;
 
         vm.search = function() {
@@ -11,7 +10,5 @@ class NavbarCtrl {
         };
     }
 }
-
-NavbarCtrl.$inject = ['$location'];
 
 export default NavbarCtrl;

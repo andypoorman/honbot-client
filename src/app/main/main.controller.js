@@ -1,49 +1,49 @@
-'use strict';
-
 class MainCtrl {
-    constructor($scope, $http, $location, largeHero, $interval, ApiService) {
+    constructor($location, largeHero, ApiService) {
+        'ngInject';
 
-        let vm = this;
-        vm.apiCount = 0;
-        vm.success = 0;
-        vm.failure = 0;
+        this.apiCount = 0;
+        this.success = 0;
+        this.failure = 0;
+        this.$location = $location;
 
         // set background image
         var image = largeHero[_.random(0, largeHero.length)];
-        vm.jumbostyle = {
+        this.jumbostyle = {
             'background-image': `url(assets/images/largehero/${image}.png)`
         };
 
-        ApiService.apiCalls(res=>{
-            if(res.success){
-                vm.success += 1;
+        this.activate(ApiService);
+    }
+
+    activate(ApiService) {
+        ApiService.apiCalls((res) => {
+            if (res.success) {
+                this.success += 1;
             }
-            if(res.failure){
-                vm.failure += 1;
+            if (res.failure) {
+                this.failure += 1;
             }
-            vm.apiCount += 1;
+            this.apiCount += 1;
         });
 
-        ApiService.updates(update=>{
-            vm.updates = update;
+        ApiService.updates((update) => {
+            this.updates = update;
         });
 
-        ApiService.counts().success(res=>{
-            vm.count = res;
-            vm.apiCount += res.api;
-            vm.success += res.apiSuccess;
-            vm.failure += res.apiFail;
+        ApiService.counts().success((res) => {
+            this.count = res;
+            this.apiCount += res.api;
+            this.success += res.apiSuccess;
+            this.failure += res.apiFail;
         });
+    }
 
-        vm.search = function() {
-            if (vm.nickname) {
-                $location.path(`/player/${vm.nickname}/`);
-            }
-        };
-
+    search() {
+        if (this.nickname) {
+            this.$location.path(`/player/${this.nickname}/`);
+        }
     }
 }
-
-MainCtrl.$inject = ['$scope', '$http', '$location', 'largeHero', '$interval', 'ApiService'];
 
 export default MainCtrl;
