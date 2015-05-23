@@ -1,7 +1,5 @@
 'use strict';
 
-import _ from 'lodash';
-
 class MatchCtrl {
     constructor($routeParams, ApiService, heroData, BaseUrl, $scope, $alert, itemList) {
         let vm = this;
@@ -19,7 +17,6 @@ class MatchCtrl {
             3: 'acc'
         };
 
-        // vm.options = ['kills', 'deaths', 'assists', 'kdr', 'cs', 'gpm', 'apm', 'xpm', 'wards', 'herodmg', 'bdmg'];
         vm.options = [
             {value: 'kills', label: 'Kills'},
             {value: 'deaths', label: 'Deaths'},
@@ -56,6 +53,19 @@ class MatchCtrl {
             });
         };
 
+        var teamtotals = function(){
+            // Loops over every property of every player and creates team totals
+            _.forEach(vm.match.players, function(n) {
+                _.forEach(n, function(j, key) {
+                    if (!vm[`team${n.team}`][key]) {
+                        vm[`team${n.team}`][key] = Number(j);
+                    } else {
+                        vm[`team${n.team}`][key] += Number(j);
+                    }
+                });
+            });
+        };
+
         ApiService.match($routeParams.match, function(res){
             vm.match = res;
             vm.duration = moment.duration(res.length, 'seconds').format();
@@ -72,26 +82,7 @@ class MatchCtrl {
             
             vm.match.players = _.sortBy(vm.match.players, 'position');
             regraph();
-            _.forEach(res.players, function(n) {
-                _.forEach(n, function(j, key) {
-                    j = Number(j);
-                    if (angular.isNumber(j)) {
-                        if (n.team === 1) {
-                            if (!vm.team1[key]) {
-                                vm.team1[key] = j;
-                            } else {
-                                vm.team1[key] += j;
-                            }
-                        } else {
-                            if (!vm.team2[key]) {
-                                vm.team2[key] = j;
-                            } else {
-                                vm.team2[key] += j;
-                            }
-                        }
-                    }
-                });
-            });
+            teamtotals();
         }, function(){
             $alert({
                 title: 'ERROR:',
