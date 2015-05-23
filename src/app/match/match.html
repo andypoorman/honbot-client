@@ -130,6 +130,14 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
+            <ul class="list-inline">
+                <li class="text-muted">HoN Version: {{ ::ctrl.match.version }}</li>
+                <li class="text-muted"><a ng-href="{{ ctrl.BaseUrl }}/match/{{ ctrl.match.id }}/">Raw Data</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
             <adsense></adsense>
         </div>
     </div>
@@ -144,14 +152,6 @@
                 bs-select>Target
             </button>
             <div id="graph"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <ul class="list-inline">
-                <li class="text-muted">HoN Version: {{ ::ctrl.match.version }}</li>
-                <li class="text-muted"><a ng-href="{{ ctrl.BaseUrl }}/match/{{ ctrl.match.id }}/">Raw Data</a></li>
-            </ul>
         </div>
     </div>
     <div class="row">
