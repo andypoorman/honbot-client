@@ -74,8 +74,8 @@
                                     <span class='text-danger'>{{ ctrl.ptips[player.player_id][ctrl.m + '_losses'] }}</span> - 
                                     {{ ctrl.ptips[player.player_id][ctrl.m + '_winpercent'] * 100 | number:1 }}%<br>
                                     KDR: {{ ctrl.ptips[player.player_id][ctrl.m + '_kdr'] | number:2 }}<br>
-                                    GPM: {{ ctrl.ptips[player.player_id][ctrl.m + '_avg_gpm'] | number:2 }}<br>
-                                    APM: {{ ctrl.ptips[player.player_id][ctrl.m + '_avg_apm'] | number:2 }}<br>
+                                    GPM: {{ ctrl.ptips[player.player_id][ctrl.m + '_avg_gpm'] | number:0 }}<br>
+                                    APM: {{ ctrl.ptips[player.player_id][ctrl.m + '_avg_apm'] | number:0 }}<br>
                                     Wards: {{ ctrl.ptips[player.player_id][ctrl.m + '_avg_wards'] | number:2 }}
                                     "
                                data-trigger="hover"

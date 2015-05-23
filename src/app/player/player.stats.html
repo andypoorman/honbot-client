@@ -8,8 +8,8 @@
             <table class="table table-striped">
                 <tbody>
                     <tr>
-                        <td>Match Length <span class="text-muted">(Min)</span>
-                            <span class="pull-right">{{ ::ctrl.s[ctrl.m + '_avg_time'] | number:0 }}</span>
+                        <td>Length
+                            <span class="pull-right">{{ ::ctrl.s[ctrl.m + '_avg_time'] | number:0 }} minutes</span>
                         </td>
                     </tr>
                     <tr>
@@ -28,8 +28,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Kills:Death
-                            <span class="text-muted">(KDR)</span>
+                        <td>KDR
                             <span class="pull-right">{{ ::ctrl.s[ctrl.m + '_kdr'] | number:2 }}</span>
                         </td>
                     </tr>
@@ -39,30 +38,27 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Exp/min
-                            <span class="text-muted">(XPM)</span>
+                        <td>XPM
                             <span class="pull-right">{{ ::ctrl.s[ctrl.m + '_avg_xpm'] | number:0 }}</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>Gold/min
-                            <span class="text-muted">(GPM)</span>
+                        <td>GPM
                             <span class="pull-right">{{ ::ctrl.s[ctrl.m + '_avg_gpm'] | number:0 }}</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>Actions/min
-                            <span class="text-muted">(APM)</span>
+                        <td>APM
                             <span class="pull-right">{{ ::ctrl.s[ctrl.m + '_avg_apm'] | number:0 }}</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>Creep Kills
+                        <td>CS
                             <span class="pull-right">{{ ::ctrl.s[ctrl.m + '_avg_creeps'] | number:0 }}</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>Creep Denies
+                        <td>CD
                             <span class="pull-right">{{ ::ctrl.s[ctrl.m + '_avg_denies'] | number:0 }}</span>
                         </td>
                     </tr>
@@ -72,7 +68,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Consumables
+                        <td>Consume
                             <span class="pull-right">{{ ::ctrl.s[ctrl.m + '_avg_consumables'] | number:1 }}</span>
                         </td>
                     </tr>
@@ -88,8 +84,8 @@
             <table class="table table-striped">
                 <tbody>
                     <tr>
-                        <td>Hours Played
-                            <span class="pull-right">{{ ctrl.s[ctrl.m + '_secs'] / 60 / 60 | number:0 }}</span>
+                        <td>Gametime
+                            <span class="pull-right">{{ ctrl.s[ctrl.m + '_secs'] / 60 / 60 | number:0 }} Hours</span>
                         </td>
                     </tr>
                     <tr>

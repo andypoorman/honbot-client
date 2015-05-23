@@ -203,7 +203,7 @@ $input-border-radius-small:      $border-radius-small !default;
 $input-border-focus:             darken($brand-primary, 20%) !default;
 
 //** Placeholder text color
-$input-color-placeholder:        #eee !default;
+$input-color-placeholder:        #b2b2b2 !default;
 
 //** Default `.form-control` height
 $input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
@@ -369,7 +369,7 @@ $navbar-default-bg:                lighten($body-bg, 10%) !default;
 $navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
 
 // Navbar links
-$navbar-default-link-color:                lighten($body-bg, 70%) !default;
+$navbar-default-link-color:                lighten($body-bg, 80%) !default;
 $navbar-default-link-hover-color:          #333 !default;
 $navbar-default-link-hover-bg:             transparent !default;
 $navbar-default-link-active-color:         #555 !default;
