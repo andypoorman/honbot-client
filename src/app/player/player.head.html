@@ -27,7 +27,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-5 text-center">
+    <div class="col-md-5">
         <div class="btn-group btn-group-sm btn-group-justified">
             <a class="btn btn-sm" ng-class="{'btn-default': ctrl.m != 'rnk', 'btn-info': ctrl.m == 'rnk'}" ng-click="ctrl.PlayerService.changeMode(ctrl.page, '/', ctrl.s.nickname)">Ranked</a>
             <a class="btn btn-sm" ng-class="{'btn-default': ctrl.m != 'cs', 'btn-info': ctrl.m == 'cs'}" ng-click="ctrl.PlayerService.changeMode(ctrl.page, '/c/', ctrl.s.nickname)">Casual</a>
@@ -35,7 +35,7 @@
         </div>
         
     </div>
-    <div class="col-md-7 text-center">
+    <div class="col-md-7">
         <div class="btn-group btn-group-sm btn-group-justified">
             <a class="btn btn-sm" ng-class="{'btn-default': ctrl.page != 'player', 'btn-success': ctrl.page == 'player'}" ng-click="ctrl.PlayerService.changePage('player', ctrl.s.nickname)">Overview</a>
             <a class="btn btn-sm" ng-class="{'btn-default': ctrl.page != 'analytics', 'btn-success': ctrl.page == 'analytics'}" ng-click="ctrl.PlayerService.changePage('analytics', ctrl.s.nickname)">Matches</a>
