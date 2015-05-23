@@ -1,24 +1,15 @@
 <div class="row phead">
-    <div class="col-sm-7">
+    <div class="col-sm-6">
         <div class="media">
             <div class="media-left media-middle">
-                <img ng-src="https://www.heroesofnewerth.com/getAvatar_SSL.php?id={{ ctrl.s.account_id }}" width="70">
+                <img ng-src="https://www.heroesofnewerth.com/getAvatar_SSL.php?id={{ ctrl.s.account_id }}" height="70" width="70">
             </div>
             <div class="media-body">
-                <h2 class="media-heading">{{ ctrl.s.nickname || ctrl.nickname }}</h2>
-                <div class="btn-group" style="margin-top: 3px;">
-                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.m != 'rnk', 'btn-info': ctrl.m == 'rnk'}" ng-click="ctrl.PlayerService.changeMode(ctrl.page, '/', ctrl.s.nickname)">Ranked</a>
-                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.m != 'cs', 'btn-info': ctrl.m == 'cs'}" ng-click="ctrl.PlayerService.changeMode(ctrl.page, '/c/', ctrl.s.nickname)">Casual</a>
-                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.m != 'acc', 'btn-info': ctrl.m == 'acc'}" ng-click="ctrl.PlayerService.changeMode(ctrl.page, '/p/', ctrl.s.nickname)">Public</a>
-                </div>
-                <div class="btn-group" style="margin-top: 3px; margin-left: 5px;">
-                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.page != 'player', 'btn-warning': ctrl.page == 'player'}" ng-click="ctrl.PlayerService.changePage('player', ctrl.s.nickname)">Stats</a>
-                    <a class="btn btn-xs" ng-class="{'btn-default': ctrl.page != 'analytics', 'btn-warning': ctrl.page == 'analytics'}" ng-click="ctrl.PlayerService.changePage('analytics', ctrl.s.nickname)">Analytics</a>
-                </div>
+                <h2 style="margin-bottom: 0;bottom:0; margin-top: 18px;">{{ ctrl.s.nickname || ctrl.nickname }}</h2>
             </div>
         </div>
     </div>
-    <div class="col-sm-5">
+    <div class="col-sm-6">
         <div class="row">
             <div class="col-xs-3 text-center">
                 <h4>mmr</h4>{{ ::ctrl.s[ctrl.m + '_amm_team_rating'] || ctrl.s[ctrl.m + '_pub_skill'] | numeraljs:'0' }}
@@ -30,8 +21,26 @@
                 <h4 class="text-danger">loss</h4>{{ ::ctrl.s[ctrl.m + '_losses'] }}
             </div>
             <div class="col-xs-3 text-center">
-                <h5 style="margin-top: 21px;">{{ ctrl.s[ctrl.m + '_winpercent'] * 100 | number:1 }}%</h5>
+                <h4 style="margin-top: 23px;">{{ ctrl.s[ctrl.m + '_winpercent'] * 100 | number:1 }}%</h4>
             </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5 text-center">
+        <div class="btn-group btn-group-sm btn-group-justified">
+            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.m != 'rnk', 'btn-info': ctrl.m == 'rnk'}" ng-click="ctrl.PlayerService.changeMode(ctrl.page, '/', ctrl.s.nickname)">Ranked</a>
+            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.m != 'cs', 'btn-info': ctrl.m == 'cs'}" ng-click="ctrl.PlayerService.changeMode(ctrl.page, '/c/', ctrl.s.nickname)">Casual</a>
+            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.m != 'acc', 'btn-info': ctrl.m == 'acc'}" ng-click="ctrl.PlayerService.changeMode(ctrl.page, '/p/', ctrl.s.nickname)">Public</a>
+        </div>
+        
+    </div>
+    <div class="col-md-7 text-center">
+        <div class="btn-group btn-group-sm btn-group-justified">
+            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.page != 'player', 'btn-success': ctrl.page == 'player'}" ng-click="ctrl.PlayerService.changePage('player', ctrl.s.nickname)">Overview</a>
+            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.page != 'analytics', 'btn-success': ctrl.page == 'analytics'}" ng-click="ctrl.PlayerService.changePage('analytics', ctrl.s.nickname)">Matches</a>
+            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.page != 'analytics', 'btn-success': ctrl.page == 'analytics'}" ng-click="ctrl.PlayerService.changePage('analytics', ctrl.s.nickname)">Heroes</a>
+            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.page != 'analytics', 'btn-success': ctrl.page == 'analytics'}" ng-click="ctrl.PlayerService.changePage('analytics', ctrl.s.nickname)">Items</a>
         </div>
     </div>
 </div>
