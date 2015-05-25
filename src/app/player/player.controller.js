@@ -1,18 +1,17 @@
 class PlayerCtrl {
-    constructor($routeParams, ApiService, ModeService, $location, $alert, BaseUrl, PlayerService) {
+    constructor($routeParams, ApiService, ModeService, $alert, BaseUrl, PlayerService) {
         'ngInject';
-        let vm = this;
-        vm.m = ModeService.modeNameFromPath;
-        vm.s = {};
-        vm.BaseUrl = BaseUrl.host;
-        vm.nickname = $routeParams.player;
-        vm.page = 'player';
-        vm.PlayerService = PlayerService;
+        this.m = ModeService.modeNameFromPath;
+        this.s = {};
+        this.BaseUrl = BaseUrl.host;
+        this.nickname = $routeParams.player;
+        this.page = 'player';
+        this.PlayerService = PlayerService;
 
-        ApiService.singlePlayer(vm.nickname).success(res => {
-            console.log(res)
-            vm.s = res;
-            if (vm.s.fallback) {
+
+        ApiService.singlePlayer(this.nickname).success(res => {
+            this.s = res;
+            if (this.s.fallback) {
                 $alert({
                     title: 'Warning:',
                     content: 'Stats failed to update. This could be because the HoN api is currently busy or down.',
@@ -32,6 +31,9 @@ class PlayerCtrl {
                 show: true
             });
         });
+    }
+    bookmark() {
+
     }
 }
 

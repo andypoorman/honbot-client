@@ -20,7 +20,7 @@ import largeHero from './largeHero';
 import itemList from './itemList';
 import heroData from './heroData';
 
-angular.module('client', ['ngRoute', 'mgcrea.ngStrap', 'angularMoment', 'btford.socket-io', 'ngNumeraljs', 'angulartics', 'angulartics.google.analytics'])
+angular.module('client', ['ngRoute', 'ngCookies', 'mgcrea.ngStrap', 'angularMoment', 'btford.socket-io', 'ngNumeraljs', 'angulartics', 'angulartics.google.analytics'])
     .constant('largeHero', largeHero)
     .constant('itemList', itemList)
     .constant('heroData', heroData)

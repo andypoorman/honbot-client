@@ -1,15 +1,18 @@
 <div class="row phead">
-    <div class="col-sm-6">
+    <div class="col-sm-7">
         <div class="media">
-            <div class="media-left media-middle">
+            <div class="media-left media-middle" height="70" width="70">
                 <img ng-src="https://www.heroesofnewerth.com/getAvatar_SSL.php?id={{ ctrl.s.account_id }}" height="70" width="70">
             </div>
             <div class="media-body">
-                <h2 style="margin-bottom: 0;bottom:0; margin-top: 18px;">{{ ctrl.s.nickname || ctrl.nickname }}</h2>
+                <h2 style="margin-bottom: 0;bottom:0; margin-top: 18px;">
+                    {{ ctrl.s.nickname || ctrl.nickname }}
+                    <small ng-click="ctrl.PlayerService.toggleBookmark(ctrl.s.nickname)" class="glyphicon text-gold player-star" ng-class="{'glyphicon-star-empty': !ctrl.PlayerService.checkPlayerExists(ctrl.s.nickname), 'glyphicon-star': ctrl.PlayerService.checkPlayerExists(ctrl.s.nickname)}"></small>
+                </h2>
             </div>
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-5">
         <div class="row">
             <div class="col-xs-3 text-center">
                 <h4>mmr</h4>{{ ::ctrl.s[ctrl.m + '_amm_team_rating'] || ctrl.s[ctrl.m + '_pub_skill'] | numeraljs:'0' }}
@@ -21,7 +24,7 @@
                 <h4 class="text-danger">loss</h4>{{ ::ctrl.s[ctrl.m + '_losses'] }}
             </div>
             <div class="col-xs-3 text-center">
-                <h4 style="margin-top: 23px;">{{ ctrl.s[ctrl.m + '_winpercent'] * 100 | number:1 }}%</h4>
+                <h4 style="margin-top: 25px;">{{ ctrl.s[ctrl.m + '_winpercent'] * 100 | number:1 }}%</h4>
             </div>
         </div>
     </div>

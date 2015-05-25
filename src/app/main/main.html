@@ -40,6 +40,23 @@
     <br>
     <div class="container">
 
+        <div class="row" ng-if="ctrl.bookmarkedPlayers.length">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title text-center">Bookedmarked Players</h5>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-inline home-inline">
+                            <li ng-repeat="mark in ctrl.bookmarkedPlayers track by $index">
+                                <a href="/player/{{mark}}/">{{mark}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-default">
