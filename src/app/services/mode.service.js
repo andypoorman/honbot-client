@@ -1,7 +1,7 @@
-// @ngInject
 class ModeService {
 
     constructor($location) {
+        'ngInject';
         this.$location = $location;
     }
     get modeNameFromPath(){

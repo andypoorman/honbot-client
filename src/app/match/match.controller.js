@@ -1,6 +1,6 @@
-// @ngInject
 class MatchCtrl {
     constructor($routeParams, ApiService, heroData, BaseUrl, $scope, $alert, itemList) {
+        'ngInject';
         let vm = this;
 
         vm.BaseUrl = BaseUrl.host;

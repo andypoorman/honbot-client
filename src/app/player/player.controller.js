@@ -1,6 +1,6 @@
-// @ngInject
 class PlayerCtrl {
     constructor($routeParams, ApiService, ModeService, $alert, BaseUrl, PlayerService) {
+        'ngInject';
         this.m = ModeService.modeNameFromPath;
         this.s = {};
         this.BaseUrl = BaseUrl.host;

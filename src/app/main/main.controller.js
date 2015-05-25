@@ -1,6 +1,6 @@
-// @ngInject
 class MainCtrl {
     constructor($location, largeHero, ApiService, PlayerService) {
+        'ngInject';
 
         this.apiCount = 0;
         this.success = 0;

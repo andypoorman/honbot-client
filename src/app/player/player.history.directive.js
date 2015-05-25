@@ -1,6 +1,6 @@
-// @ngInject
 class PlayerHistoryDirective {
     constructor() {
+        'ngInject';
 
         let directive = {
             restrict: 'E',
@@ -13,9 +13,9 @@ class PlayerHistoryDirective {
     }
 }
 
-// @ngInject
 class HistoryCtrl {
     constructor($routeParams, ApiService, ModeService, $location) {
+        'ngInject';
         this.mode = ModeService.modeNameFromPath;
         this.$location = $location;
         this.ApiService = ApiService;
