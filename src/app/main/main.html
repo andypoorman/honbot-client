@@ -44,9 +44,9 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h5 class="panel-title text-center">Bookedmarked Players</h5>
+                        <h5 class="panel-title text-center">Bookedmarked</h5>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body text-center">
                         <ul class="list-inline home-inline">
                             <li ng-repeat="mark in ctrl.bookmarkedPlayers track by $index">
                                 <a href="/player/{{mark}}/">{{mark}}</a>
@@ -63,7 +63,7 @@
                     <div class="panel-heading">
                         <h5 class="panel-title text-center">Recently Updated</h5>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body text-center">
                         <ul class="list-inline home-inline">
                             <li ng-repeat="update in ctrl.updates track by $index">
                                 <a href="/player/{{update.nickname}}/">{{update.nickname}}</a>
@@ -83,7 +83,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-sm-6">
-                                <strong>Database</strong>
+                                <strong>Database:</strong>
                                 <ul class="list-unstyled">
                                     <li>Players: {{ ctrl.count.players | number }}</li>
                                     <li>Matches: {{ ctrl.count.matches | number }}</li>
