@@ -3,11 +3,11 @@ function config($logProvider, $locationProvider, $numeraljsConfigProvider, $cook
     // Enable log
     $logProvider.debugEnabled(true);
 
-    // Set options third-party lib
     $numeraljsConfigProvider.setDefaultFormat('0.0 $');
     $locationProvider.html5Mode(true).hashPrefix('!');
-
     $cookiesProvider.defaults.expires = moment().add(99, 'years').toISOString();
 }
+
+config.$inject = ['$logProvider', '$locationProvider', '$numeraljsConfigProvider', '$cookiesProvider'];
 
 export default config;
