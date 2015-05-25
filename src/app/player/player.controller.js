@@ -10,6 +10,7 @@ class PlayerCtrl {
         vm.PlayerService = PlayerService;
 
         ApiService.singlePlayer(vm.nickname).success(res => {
+            console.log(res)
             vm.s = res;
             if (vm.s.fallback) {
                 $alert({
@@ -33,7 +34,5 @@ class PlayerCtrl {
         });
     }
 }
-
-PlayerCtrl.$inject = ['$routeParams', 'ApiService', 'ModeService', '$location', '$alert', 'BaseUrl', 'PlayerService'];
 
 export default PlayerCtrl;

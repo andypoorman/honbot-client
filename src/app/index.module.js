@@ -7,9 +7,9 @@ import runBlock from './index.run';
 import MainCtrl from './main/main.controller';
 import NavbarDirective from '../app/components/navbar/navbar.directive';
 import PlayerCtrl from './player/player.controller';
+import PlayerHistoryDirective from './player/player.history.directive';
 import PlayerService from './player/player.service';
 import AnalyticsCtrl from './analytics/analytics.controller';
-import HistoryCtrl from './player/history.controller';
 import MatchCtrl from './match/match.controller';
 import BaseUrl from './services/baseurl';
 import ApiService from './services/api.service';
@@ -33,11 +33,11 @@ angular.module('client', ['ngRoute', 'mgcrea.ngStrap', 'angularMoment', 'btford.
     .controller('PlayerCtrl', PlayerCtrl)
     .controller('AnalyticsCtrl', AnalyticsCtrl)
     .controller('MatchCtrl', MatchCtrl)
-    .controller('HistoryCtrl', HistoryCtrl)
     .factory('socket', socket)
     .service('BaseUrl', BaseUrl)
     .service('ApiService', ApiService)
     .service('ModeService', ModeService)
     .service('PlayerService', PlayerService)
     .directive('adsense', adsense)
+    .directive('playerHistory', () => new PlayerHistoryDirective())
     .directive('navbar', () => new NavbarDirective());
