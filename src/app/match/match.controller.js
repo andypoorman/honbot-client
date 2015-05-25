@@ -101,6 +101,4 @@ class MatchCtrl {
     }
 }
 
-MatchCtrl.$inject = ['$routeParams', 'ApiService', 'heroData', 'BaseUrl', '$scope', '$alert', 'itemList'];
-
 export default MatchCtrl;

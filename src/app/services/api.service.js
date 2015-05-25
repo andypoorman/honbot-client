@@ -83,6 +83,4 @@ class ApiService {
     }
 }
 
-ApiService.$inject = ['$http', 'BaseUrl', 'socket', '$analytics'];
-
 export default ApiService;

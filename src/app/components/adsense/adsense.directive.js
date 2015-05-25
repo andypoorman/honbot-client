@@ -1,4 +1,5 @@
 var adsense = function($timeout) {
+    'ngInject';
     return {
         restrict: 'E',
         link: function(scope, element) {
@@ -12,7 +13,5 @@ var adsense = function($timeout) {
         }
     };
 };
-
-adsense.$inject = ['$timeout'];
 
 export default adsense;
