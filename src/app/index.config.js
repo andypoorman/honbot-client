@@ -8,6 +8,5 @@ function config($logProvider, $locationProvider, $numeraljsConfigProvider, $cook
     $cookiesProvider.defaults.expires = moment().add(99, 'years').toISOString();
 }
 
-config.$inject = ['$logProvider', '$locationProvider', '$numeraljsConfigProvider', '$cookiesProvider'];
 
 export default config;
