@@ -1,5 +1,5 @@
+// @ngInject
 function routerConfig($routeProvider) {
-    'ngInject';
     $routeProvider
         .when('/', {
             templateUrl: 'app/main/main.html',

@@ -1,5 +1,5 @@
+// @ngInject
 function config($logProvider, $locationProvider, $numeraljsConfigProvider, $cookiesProvider) {
-    'ngInject';
     // Enable log
     $logProvider.debugEnabled(true);
 

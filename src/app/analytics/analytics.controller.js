@@ -1,6 +1,6 @@
+// @ngInject
 class AnalyticsCtrl {
     constructor($routeParams, ApiService, ModeService, $location, $alert, BaseUrl, PlayerService) {
-        'ngInject';
         let vm = this;
         vm.m = ModeService.modeNameFromPath;
         vm.s = {};

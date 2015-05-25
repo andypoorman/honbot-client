@@ -1,6 +1,6 @@
+// @ngInject
 class NavbarDirective {
     constructor() {
-        'ngInject';
 
         let directive = {
             restrict: 'E',
@@ -15,9 +15,9 @@ class NavbarDirective {
     }
 }
 
+// @ngInject
 class NavbarController {
     constructor(moment, $location) {
-        'ngInject';
 
         this.$location = $location;
     }

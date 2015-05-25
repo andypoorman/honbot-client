@@ -1,7 +1,6 @@
+// @ngInject
 class PlayerService {
-
     constructor($location, ModeService, $cookies) {
-        'ngInject';
         this.$location = $location;
         this.m = ModeService.modeNameFromPath;
         this.$cookies = $cookies;

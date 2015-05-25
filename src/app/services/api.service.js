@@ -1,7 +1,7 @@
+// @ngInject
 class ApiService {
 
     constructor($http, BaseUrl, socket, $analytics) {
-        'ngInject';
         this.$analytics = $analytics;
         this.$http = $http;
         this.apiWatching = false;
