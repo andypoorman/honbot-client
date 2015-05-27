@@ -16,10 +16,10 @@ class adsense {
 
         function linkFunc(scope, el, attr, vm) {
             vm.$timeout(function() {
-                let adsbygoogle, html, rand;
-                html = `<ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-7640562161899788' data-ad-slot='7259870550' data-ad-format='auto' data-ad-region='page-${vm.random}'></ins><br>`;
+                let html = `<ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-7640562161899788' data-ad-slot='7259870550' data-ad-format='auto' data-ad-region='page-${vm.random}'></ins><br>`;
                 el.append(html);
-                (adsbygoogle = window.adsbygoogle || []).push({});
+                let adsbygoogle = window.adsbygoogle || [];
+                adsbygoogle.push({});
             });
         }
 
@@ -31,7 +31,7 @@ class AdsenseController {
         'ngInject';
 
         this.$timeout = $timeout;
-        this.random = _.random(0, 1000000000)
+        this.random = Math.Random();
     }
 }
 
