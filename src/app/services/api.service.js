@@ -4,10 +4,12 @@ class ApiService {
         'ngInject';
         this.$analytics = $analytics;
         this.$http = $http;
-        this.apiWatching = false;
-        this.host = BaseUrl.host;
-        this.matches = {};
         this.socket = socket;
+        
+        this.host = BaseUrl.host;
+
+        this.apiWatching = false;
+        this.matches = {};
         this.updatesList = [];
         this.updateWatching = false;
     }

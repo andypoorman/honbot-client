@@ -7,7 +7,7 @@ class NavbarDirective {
             templateUrl: 'app/components/navbar/navbar.html',
             scope: {},
             controller: NavbarController,
-            controllerAs: 'nav',
+            controllerAs: 'ctrl',
             bindToController: true
         };
 

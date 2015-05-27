@@ -1,13 +1,11 @@
 class AnalyticsCtrl {
-    constructor($routeParams, ApiService, ModeService, $location, $alert, BaseUrl, PlayerService) {
+    constructor($routeParams, ApiService, $location, $alert, BaseUrl) {
         'ngInject';
         let vm = this;
-        vm.m = ModeService.modeNameFromPath;
         vm.s = {};
         vm.BaseUrl = BaseUrl.host;
         vm.nickname = $routeParams.player;
         vm.page = 'analytics';
-        vm.PlayerService = PlayerService;
 
         ApiService.singlePlayer(vm.nickname).success(res => {
             vm.s = res;

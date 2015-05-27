@@ -3,11 +3,11 @@
     <alert></alert>
     <div class="row">
         <div class="col-md-6">
-            <div ng-include="'app/player/player.head.html'"></div>
-            <div ng-include="'app/player/player.stats.html'"></div>
+            <player-head page="'player'"></player-head>
+            <player-stats></player-stats>
             <adsense></adsense>
         </div>
-        <div class="col-md-6 table-responsive">
+        <div class="col-md-6">
             <player-history></player-history>
         </div>
     </div>

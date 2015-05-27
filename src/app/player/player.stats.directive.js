@@ -1,17 +1,32 @@
-class PlayerCtrl {
-    constructor($routeParams, ApiService, ModeService, $alert, BaseUrl, PlayerService) {
+class PlayerStatsDirective {
+    constructor() {
         'ngInject';
-        this.m = ModeService.modeNameFromPath;
-        this.s = {};
+
+        let directive = {
+            restrict: 'E',
+            templateUrl: 'app/player/player.stats.html',
+            scope: {},
+            controller: PlayerStatsCtrl,
+            controllerAs: 'ctrl',
+            bindToController: true
+        };
+
+        return directive;
+    }
+}
+
+class PlayerStatsCtrl {
+    constructor($routeParams, ApiService, $alert, BaseUrl) {
+        'ngInject';
         this.BaseUrl = BaseUrl.host;
+        
+        this.m = $routeParams.mode || 'rnk';
         this.nickname = $routeParams.player;
-        this.page = 'player';
-        this.PlayerService = PlayerService;
 
 
         ApiService.singlePlayer(this.nickname).success(res => {
             this.s = res;
-            if (this.s.fallback) {
+            if (res.fallback) {
                 $alert({
                     title: 'Warning:',
                     content: 'Stats failed to update. This could be because the HoN api is currently busy or down.',
@@ -32,9 +47,6 @@ class PlayerCtrl {
             });
         });
     }
-    bookmark() {
-
-    }
 }
 
-export default PlayerCtrl;
+export default PlayerStatsDirective;

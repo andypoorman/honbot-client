@@ -5,8 +5,10 @@ class PlayerHistoryDirective {
         let directive = {
             restrict: 'E',
             templateUrl: 'app/player/player.history.html',
+            scope: {},
             controller: HistoryCtrl,
-            controllerAs: 'hist',
+            controllerAs: 'ctrl',
+            bindToController: true
         };
 
         return directive;
@@ -14,13 +16,15 @@ class PlayerHistoryDirective {
 }
 
 class HistoryCtrl {
-    constructor($routeParams, ApiService, ModeService, $location) {
+    constructor($routeParams, ApiService, $location) {
         'ngInject';
-        this.mode = ModeService.modeNameFromPath;
+
         this.$location = $location;
         this.ApiService = ApiService;
 
         this.nickname = $routeParams.player;
+        this.mode = $routeParams.mode || 'rnk';
+
         this.historyPage = 0;
         this.history = [];
 

@@ -7,31 +7,9 @@ function routerConfig($routeProvider) {
             controllerAs: 'ctrl',
         })
         .when('/player/:player/', {
-            templateUrl: 'app/player/player.html',
-            controller: 'PlayerCtrl',
-            controllerAs: 'ctrl'
-        })
-        .when('/c/player/:player/', {
-            templateUrl: 'app/player/player.html',
-            controller: 'PlayerCtrl',
-            controllerAs: 'ctrl'
-        })
-        .when('/p/player/:player/', {
-            templateUrl: 'app/player/player.html',
-            controller: 'PlayerCtrl',
-            controllerAs: 'ctrl'
+            templateUrl: 'app/player/player.html'
         })
         .when('/analytics/:player/', {
-            templateUrl: 'app/analytics/analytics.html',
-            controller: 'AnalyticsCtrl',
-            controllerAs: 'ctrl'
-        })
-        .when('/c/analytics/:player/', {
-            templateUrl: 'app/analytics/analytics.html',
-            controller: 'AnalyticsCtrl',
-            controllerAs: 'ctrl'
-        })
-        .when('/p/analytics/:player/', {
             templateUrl: 'app/analytics/analytics.html',
             controller: 'AnalyticsCtrl',
             controllerAs: 'ctrl'

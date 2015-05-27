@@ -1,12 +1,13 @@
 class MainCtrl {
-    constructor($location, largeHero, ApiService, PlayerService) {
+    constructor($location, largeHero, ApiService, BookmarkService) {
         'ngInject';
+        this.$location = $location;
 
+        this.bookmarkedPlayers = BookmarkService.bookmarkedPlayers;
+        
         this.apiCount = 0;
         this.success = 0;
         this.failure = 0;
-        this.$location = $location;
-        this.bookmarkedPlayers = PlayerService.bookmarkedPlayers;
 
         // set background image
         var image = largeHero[_.random(0, largeHero.length)];
