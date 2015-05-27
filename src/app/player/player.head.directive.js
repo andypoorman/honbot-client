@@ -22,6 +22,7 @@ class PlayerHeadCtrl {
         'ngInject';
 
         this.$location = $location;
+        this.nickname = $routeParams.player;
         this.m = $routeParams.mode || 'rnk';
         this.$cookies = $cookies;
         this.bookmarkedPlayers = $cookies.getObject('bookmarkedPlayers') || [];

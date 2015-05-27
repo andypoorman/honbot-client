@@ -19,10 +19,8 @@ class PlayerStatsCtrl {
     constructor($routeParams, ApiService, $alert, BaseUrl) {
         'ngInject';
         this.BaseUrl = BaseUrl.host;
-        
-        this.m = $routeParams.mode || 'rnk';
-        this.nickname = $routeParams.player;
 
+        this.m = $routeParams.mode || 'rnk';
 
         ApiService.singlePlayer(this.nickname).success(res => {
             this.s = res;
