@@ -31,7 +31,7 @@ class AdsenseController {
         'ngInject';
 
         this.$timeout = $timeout;
-        this.random = Math.Random();
+        this.random = Math.random();
     }
 }
 
