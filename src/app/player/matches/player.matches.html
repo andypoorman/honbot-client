@@ -1,0 +1,100 @@
+<div class="row">
+    <div class="col-xs-12">
+        swag filters
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h4>Average Statistics for the Selected Matches</h4>
+        <div class="row">
+            <div class="col-md-1 col-xs-2">
+                <h3>{{ctrl.pulled.length}}</h3>
+                <h5>Matches</h5>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <h3>{{ctrl.averages.length}}</h3>
+                <h5>Duration</h5>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <h3>{{ctrl.averages.kills | number:2}}</h3>
+                <h5>Kills</h5>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <h3>{{ctrl.averages.deaths | number:2}}</h3>
+                <h5>Deaths</h5>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <h3>{{ctrl.averages.assists | number:2}}</h3>
+                <h5>Assists</h5>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <h3>{{ctrl.averages.cs | number:2}}</h3>
+                <h5>Assists</h5>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <h3>{{ctrl.averages.denies | number:2}}</h3>
+                <h5>Assists</h5>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <h3>{{ctrl.averages.gpm | number:0}}</h3>
+                <h5>GPM</h5>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <h3>{{ctrl.averages.xpm | number:0}}</h3>
+                <h5>XPM</h5>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <h3>{{ctrl.averages.apm | number:0}}</h3>
+                <h5>APM</h5>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <h3>{{ctrl.averages.wards | number:2}}</h3>
+                <h5>Wards</h5>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <h3>{{ctrl.averages.herodmg | numeraljs:'0.0a' }}</h3>
+                <h5>HD</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="table-responsive">
+            <table id="history" class="table table-header table-condensed">
+                <thead>
+                    <tr>
+                        <th class="text-center">Hero</th>
+                        <th class="text-center">K</th>
+                        <th class="text-center">D</th>
+                        <th class="text-center">A</th>
+                        <th class="text-center">KDR</th>
+                        <th class="text-center">GPM</th>
+                        <th class="text-center">XPM</th>
+                        <th class="text-center">APM</th>
+                        <th class="text-center">HD</th>
+                        <th class="text-center">TD</th>
+                        <th class="text-center">+/-</th>
+                        <th class="text-center">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="match in ctrl.filtered track by $index" ng-click="ctrl.goMatch(match.match_id)" ng-class="{matchloss: !match.win, matchwin: match.win}">
+                        <td><img ng-src="//www.heroesofnewerth.com/images/heroes/{{ ::match.hero_id }}/icon_128.jpg" width="30">{{ ::match.level }}</td>
+                        <td>{{ ::match.kills }}</td>
+                        <td>{{ ::match.deaths }}</td>
+                        <td>{{ ::match.assists }}</td>
+                        <td>{{ ::match.kdr | number:2 }}</td>
+                        <td>{{ ::match.gpm | number:0 }}</td>
+                        <td>{{ ::match.xpm | number:0 }}</td>
+                        <td>{{ ::match.apm | number:0 }}</td>
+                        <td>{{ ::match.herodmg | numeraljs:'0.0a' }}</td>
+                        <td>{{ ::match.bdmg | numeraljs:'0.0a' }}</td>
+                        <td>{{ ::match.mmr_change | number:1 }}</td>
+                        <td am-time-ago="match.date"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

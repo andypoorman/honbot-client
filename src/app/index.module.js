@@ -13,6 +13,7 @@ import socket from '../app/components/socket/socket.factory';
 import PlayerHistoryDirective from './player/history/player.history.directive';
 import PlayerHeadDirective from './player/header/player.head.directive';
 import PlayerStatsDirective from './player/stats/player.stats.directive';
+import PlayerMatchesDirective from './player/matches/player.matches.directive';
 import MatchCtrl from './match/match.controller';
 
 import BaseUrl from './services/baseurl';
@@ -52,4 +53,5 @@ angular.module('client', [
     .directive('hbPlayerHistory', () => new PlayerHistoryDirective())
     .directive('hbPlayerHead', () => new PlayerHeadDirective())
     .directive('hbPlayerStats', () => new PlayerStatsDirective())
+    .directive('hbPlayerMatches', () => new PlayerMatchesDirective())
     .directive('hbNavbar', () => new NavbarDirective());
