@@ -4,7 +4,7 @@ class PlayerStatsDirective {
 
         let directive = {
             restrict: 'E',
-            templateUrl: 'app/player/player.stats.html',
+            templateUrl: 'app/player/stats/player.stats.html',
             scope: {},
             controller: PlayerStatsCtrl,
             controllerAs: 'ctrl',

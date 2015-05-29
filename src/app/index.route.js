@@ -7,16 +7,16 @@ function routerConfig($routeProvider) {
             controllerAs: 'ctrl'
         })
         .when('/player/:player/', {
-            templateUrl: 'app/player/player.overview.html'
+            templateUrl: 'app/player/views/player.overview.html'
         })
         .when('/player/:player/matches/', {
-            templateUrl: 'app/player/player.matches.html',
+            templateUrl: 'app/player/views/player.matches.html',
         })
         .when('/player/:player/heroes/', {
-            templateUrl: 'app/player/player.heroes.html',
+            templateUrl: 'app/player/views/player.heroes.html',
         })
         .when('/player/:player/items/', {
-            templateUrl: 'app/player/player.items.html',
+            templateUrl: 'app/player/views/player.items.html',
         })
         .when('/match/:match/', {
             templateUrl: 'app/match/match.html',

@@ -4,7 +4,7 @@ class PlayerHeadDirective {
 
         let directive = {
             restrict: 'E',
-            templateUrl: 'app/player/player.head.html',
+            templateUrl: 'app/player/header/player.head.html',
             scope: {
                 page: '='
             },

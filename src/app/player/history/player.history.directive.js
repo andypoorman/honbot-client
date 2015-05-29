@@ -4,7 +4,7 @@ class PlayerHistoryDirective {
 
         let directive = {
             restrict: 'E',
-            templateUrl: 'app/player/player.history.html',
+            templateUrl: 'app/player/history/player.history.html',
             scope: {},
             controller: HistoryCtrl,
             controllerAs: 'ctrl',
