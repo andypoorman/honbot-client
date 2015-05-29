@@ -31,13 +31,11 @@ class PlayerHeadCtrl {
             this.s = res;
         });
     }
-    changePage(page, nickname) {
-        if (this.m === 'rnk') {
-            this.$location.path(`/${page}/${nickname}/`);
-        } else if (this.m === 'cs') {
-            this.$location.path(`/c/${page}/${nickname}/`);
-        } else if (this.m === 'acc') {
-            this.$location.path(`/p/${page}/${nickname}/`);
+    changePage(page) {
+        if(page === 'player'){
+            this.$location.path(`/player/${this.nickname}/`);
+        } else {
+            this.$location.path(`/player/${this.nickname}/${page}/`);
         }
     }
     changeMode(newmode) {

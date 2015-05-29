@@ -1,4 +1,4 @@
-class MainCtrl {
+class HomeCtrl {
     constructor($location, largeHero, ApiService, BookmarkService) {
         'ngInject';
         this.$location = $location;
@@ -48,4 +48,4 @@ class MainCtrl {
     }
 }
 
-export default MainCtrl;
+export default HomeCtrl;

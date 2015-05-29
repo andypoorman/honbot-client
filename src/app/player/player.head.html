@@ -1,4 +1,4 @@
-<div class="row pctrl">
+<div class="row">
     <div class="col-sm-7">
         <div class="media">
             <div class="media-left media-middle" height="70" width="70">
@@ -6,9 +6,9 @@
             </div>
             <div class="media-body">
                 <h2 style="margin-bottom: 0;bottom:0; margin-top: 18px;">
-                    {{ ctrl.s.nickname || ctrl.nickname }}
-                    <small ng-click="ctrl.toggleBookmark(ctrl.s.nickname)" class="glyphicon text-gold player-star" ng-class="{'glyphicon-star-empty': !ctrl.checkPlayerExists(ctrl.s.nickname), 'glyphicon-star': ctrl.checkPlayerExists(ctrl.s.nickname)}"></small>
-                </h2>
+                        {{ ctrl.s.nickname || ctrl.nickname }}
+                        <small ng-click="ctrl.toggleBookmark(ctrl.s.nickname)" class="glyphicon text-gold player-star" ng-class="{'glyphicon-star-empty': !ctrl.checkPlayerExists(ctrl.s.nickname), 'glyphicon-star': ctrl.checkPlayerExists(ctrl.s.nickname)}"></small>
+                    </h2>
             </div>
         </div>
     </div>
@@ -32,18 +32,17 @@
 <div class="row">
     <div class="col-md-5">
         <div class="btn-group btn-group-sm btn-group-justified">
-            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.m != 'rnk', 'btn-info': ctrl.m == 'rnk'}" ng-click="ctrl.changeMode('rnk')">Ranked</a>
+            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.m != 'rnk', 'btn-info': ctrl.m == 'rnk'}" ng-click="ctrl.changeMode(null)">Ranked</a>
             <a class="btn btn-sm" ng-class="{'btn-default': ctrl.m != 'cs', 'btn-info': ctrl.m == 'cs'}" ng-click="ctrl.changeMode('cs')">Casual</a>
             <a class="btn btn-sm" ng-class="{'btn-default': ctrl.m != 'acc', 'btn-info': ctrl.m == 'acc'}" ng-click="ctrl.changeMode('acc')">Public</a>
         </div>
-        
     </div>
     <div class="col-md-7">
         <div class="btn-group btn-group-sm btn-group-justified">
-            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.page != 'player', 'btn-success': ctrl.page == 'player'}" ng-click="ctrl.changePage('player', ctrl.s.nickname)">Overview</a>
-            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.page != 'analytics', 'btn-success': ctrl.page == 'analytics'}" ng-click="ctrl.changePage('analytics', ctrl.s.nickname)">Matches</a>
-            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.page != 'analytics', 'btn-success': ctrl.page == 'analytics'}" ng-click="ctrl.changePage('analytics', ctrl.s.nickname)">Heroes</a>
-            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.page != 'analytics', 'btn-success': ctrl.page == 'analytics'}" ng-click="ctrl.changePage('analytics', ctrl.s.nickname)">Items</a>
+            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.page != 'player', 'btn-success': ctrl.page == 'player'}" ng-click="ctrl.changePage('player')">Overview</a>
+            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.page != 'matches', 'btn-success': ctrl.page == 'matches'}" ng-click="ctrl.changePage('matches')">Matches</a>
+            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.page != 'heroes', 'btn-success': ctrl.page == 'heroes'}" ng-click="ctrl.changePage('heroes')">Heroes</a>
+            <a class="btn btn-sm" ng-class="{'btn-default': ctrl.page != 'items', 'btn-success': ctrl.page == 'items'}" ng-click="ctrl.changePage('items')">Items</a>
         </div>
     </div>
 </div>

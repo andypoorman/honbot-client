@@ -53,7 +53,7 @@ class HistoryCtrl {
     }
     filterMatches(matches, account_id) {
         angular.forEach(matches, (n) => {
-            var temp = _.find(n.players, 'player_id', account_id);
+            let temp = _.find(n.players, 'player_id', account_id);
             temp.date = n.date;
             this.history.push(temp);
         });

@@ -4,7 +4,7 @@ import routerConfig from './index.route';
 
 import runBlock from './index.run';
 
-import MainCtrl from './main/main.controller';
+import HomeCtrl from './home/home.controller';
 import NavbarDirective from '../app/components/navbar/navbar.directive';
 import PlayerHistoryDirective from './player/player.history.directive';
 import BookmarkService from './player/bookmark.service';
@@ -29,7 +29,7 @@ angular.module('client', ['ngRoute', 'ngCookies', 'mgcrea.ngStrap', 'angularMome
     .config(routerConfig)
     .run(runBlock)
 
-    .controller('MainCtrl', MainCtrl)
+    .controller('HomeCtrl', HomeCtrl)
     .controller('AnalyticsCtrl', AnalyticsCtrl)
     .controller('MatchCtrl', MatchCtrl)
     .factory('socket', socket)
