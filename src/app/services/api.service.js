@@ -25,10 +25,14 @@ class ApiService {
         var that = this;
         if(!this.updateWatching){
             this.$analytics.eventTrack('api', {category: 'main', label: 'recentPlayers'});
+
+            // pull list of recent players
             this.$http.get(`${this.host}/recentPlayers`).success((res)=>{
                 that.updatesList = that.updatesList.concat(res);
                 callback(that.updatesList);
             });
+
+            // subscribe to new players being updated
             this.socket.on('update', function(data) {
                 that.updatesList.unshift(data);
                 that.updatesList = _.dropRight(that.updatesList);
@@ -43,6 +47,7 @@ class ApiService {
         return this.$http.get(`${this.host}/counts`);
     }
     singlePlayer(nickname) {
+        // return a single player stats
         this.$analytics.eventTrack('api', {category: 'player', label: nickname});
         return this.$http({
             method: 'GET',
