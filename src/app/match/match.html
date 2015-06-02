@@ -9,7 +9,7 @@
                     <img ng-src="assets/images/maps/{{ match.map_used || 'caldavar' }}.jpg" width="65">
                 </div>
                 <div class="media-body">
-                    <h2 class="media-heading" style="padding-top: 5px">Match: {{ ctrl.match.id }}</h2>
+                    <h2 class="media-heading" style="padding-top: 5px">Match: {{ ::ctrl.matchid }}</h2>
                     <h5 style="padding-left: 2px"><span am-time-ago="ctrl.match.date" data-title="{{ ctrl.match.date | date:'medium' }}" data-placement="right" bs-tooltip class="text-muted"></span></h5>
                 </div>
             </div>
@@ -17,20 +17,24 @@
 
         <div class="col-md-7">
             <div class="row text-center">
-                <div class="col-xs-4">
+                <div class="col-xs-3">
                     <h4>Winner</h4>
                     <h5 class="text-success" ng-if="ctrl.team1.win > ctrl.team2.win">Legion</h5>
                     <h5 class="text-danger" ng-if="ctrl.team2.win > ctrl.team1.win">Hellbourne</h5>
                 </div>
-                <div class="col-xs-4">
+                <div class="col-xs-3">
                     <h4>Mode</h4>
-                    <h5 ng-if="ctrl.match.mode == 1">Ranked</h5>
-                    <h5 ng-if="ctrl.match.mode == 2">Casual</h5>
-                    <h5 ng-if="ctrl.match.mode == 3">Public</h5>
+                    <h5 ng-show="ctrl.match.mode == 1">Ranked</h5>
+                    <h5 ng-show="ctrl.match.mode == 2">Casual</h5>
+                    <h5 ng-show="ctrl.match.mode == 3">Public</h5>
                 </div>
-                <div class="col-xs-4">
+                <div class="col-xs-3">
                     <h4>Length</h4>
-                    <h5>{{ ctrl.duration }}</h5>
+                    <h5>{{ ::ctrl.duration }}</h5>
+                </div>
+                <div class="col-xs-3">
+                    <h4>Version</h4>
+                    <h5>{{ ::ctrl.match.version }}</h5>
                 </div>
             </div>
         </div>
@@ -59,30 +63,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="(key, player) in ctrl.match.players | filter:{team: t} track by $index" class="player-{{ player.position }}">
+                    <tr ng-repeat="(key, player) in ctrl.match.players | filter:{team: t}" class="player-{{ player.position }}">
                         <td>
-                            <a data-title="{{ ctrl.heroData[player.hero_id].disp_name }}"
+                            <a data-title="{{ ::ctrl.heroData[player.hero_id].disp_name }}"
                                data-placement="right"
                                bs-tooltip>
-                                <img ng-src="assets/images/heroes/{{player.hero_id}}.jpg" width="30">
+                                <img ng-src="assets/images/heroes/{{ ::player.hero_id }}.jpg" width="30">
                             </a>
-                            <a href="/player/{{ player.nickname }}/"
+                            <a href="/player/{{ ::player.nickname }}/"
                                bs-popover
-                               data-title="<img src='https://www.heroesofnewerth.com/getAvatar_SSL.php?id={{ player.player_id }}' width='25'> {{ player.nickname }}"
+                               data-title="<img src='https://www.heroesofnewerth.com/getAvatar_SSL.php?id={{ ::player.player_id }}' width='25'> {{ ::player.nickname }}"
                                data-content="
-                                    <span class='text-success'>{{ ctrl.ptips[player.player_id][ctrl.m + '_wins'] }}</span> - 
-                                    <span class='text-danger'>{{ ctrl.ptips[player.player_id][ctrl.m + '_losses'] }}</span> - 
+                                    <span class='text-success'>{{ ::ctrl.ptips[player.player_id][ctrl.m + '_wins'] }}</span> - 
+                                    <span class='text-danger'>{{ ::ctrl.ptips[player.player_id][ctrl.m + '_losses'] }}</span> - 
                                     {{ ctrl.ptips[player.player_id][ctrl.m + '_winpercent'] * 100 | number:1 }}%<br>
-                                    KDR: {{ ctrl.ptips[player.player_id][ctrl.m + '_kdr'] | number:2 }}<br>
-                                    GPM: {{ ctrl.ptips[player.player_id][ctrl.m + '_avg_gpm'] | number:0 }}<br>
-                                    APM: {{ ctrl.ptips[player.player_id][ctrl.m + '_avg_apm'] | number:0 }}<br>
-                                    Wards: {{ ctrl.ptips[player.player_id][ctrl.m + '_avg_wards'] | number:2 }}
+                                    KDR: {{ ::ctrl.ptips[player.player_id][ctrl.m + '_kdr'] | number:2 }}<br>
+                                    GPM: {{ ::ctrl.ptips[player.player_id][ctrl.m + '_avg_gpm'] | number:0 }}<br>
+                                    APM: {{ ::ctrl.ptips[player.player_id][ctrl.m + '_avg_apm'] | number:0 }}<br>
+                                    Wards: {{ ::ctrl.ptips[player.player_id][ctrl.m + '_avg_wards'] | number:2 }}
                                     "
                                data-trigger="hover"
                                data-html="True">
-                                {{player.nickname}}
+                                {{ ::player.nickname }}
                             </a>
-                            {{ ctrl.ptips[player.player_id][ctrl.m + '_amm_team_rating'] || ctrl.ptips[player.player_id][ctrl.m + '_pub_skill'] | numeraljs:'0' }}
+                            {{ ::ctrl.ptips[player.player_id][ctrl.m + '_amm_team_rating'] || ctrl.ptips[player.player_id][ctrl.m + '_pub_skill'] | numeraljs:'0' }}
                         </td>
                         <td>
                             <a ng-repeat="item in player.items track by $index"
@@ -126,14 +130,6 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <ul class="list-inline">
-                <li class="text-muted">HoN Version: {{ ::ctrl.match.version }}</li>
-                <li class="text-muted"><a ng-href="{{ ctrl.BaseUrl }}/match/{{ ctrl.match.id }}/">Raw Data</a></li>
-            </ul>
         </div>
     </div>
     <div class="row">
