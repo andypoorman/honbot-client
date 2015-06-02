@@ -3,13 +3,12 @@ class adsense {
 
         let directive = {
             restrict: 'E',
-            scope: {
-                extraValues: '='
-            },
-            template: '&nbsp;',
+            scope: {},
+            template: '',
             link: linkFunc,
             controller: AdsenseController,
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            bindToController: true
         };
 
         return directive;
@@ -20,9 +19,8 @@ class adsense {
                 el.append(html);
                 let adsbygoogle = window.adsbygoogle || [];
                 adsbygoogle.push({});
-            });
+            }, 250, false);
         }
-
     }
 }
 
