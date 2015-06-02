@@ -62,6 +62,16 @@
                         </td>
                     </tr>
                     <tr>
+                        <td>HD
+                            <span class="pull-right">{{ ::ctrl.s[ctrl.m + '_avg_herodmg'] | numeraljs:'0.0a' }}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>TD
+                            <span class="pull-right">{{ ::ctrl.s[ctrl.m + '_avg_bdmg'] | numeraljs:'0.0a' }}</span>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>Wards
                             <span class="pull-right">{{ ::ctrl.s[ctrl.m + '_avg_wards'] | number:1 }}</span>
                         </td>
@@ -240,6 +250,6 @@
 </div>
 <div class="row">
     <div class="col-sm-4">
-        <a ng-href="{{::ctrl.BaseUrl}}/player/{{ ::ctrl.nickname }}/" target="_blank">Raw Data</a>
+        <a ng-href="{{::ctrl.BaseUrl}}/player/{{ ::ctrl.s.nickname }}/" target="_blank">Raw Data</a>
     </div>
 </div>

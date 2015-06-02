@@ -27,7 +27,7 @@ class PlayerHeadCtrl {
         this.$cookies = $cookies;
         this.bookmarkedPlayers = $cookies.getObject('bookmarkedPlayers') || [];
 
-        ApiService.singlePlayer($routeParams.player).success(res => {
+        ApiService.singlePlayer(this.nickname).success(res => {
             this.s = res;
         });
     }

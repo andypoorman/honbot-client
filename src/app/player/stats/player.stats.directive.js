@@ -22,7 +22,7 @@ class PlayerStatsCtrl {
 
         this.m = $routeParams.mode || 'rnk';
 
-        ApiService.singlePlayer(this.nickname).success(res => {
+        ApiService.singlePlayer($routeParams.player).success(res => {
             this.s = res;
             if (res.fallback) {
                 $alert({

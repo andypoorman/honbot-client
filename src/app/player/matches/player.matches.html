@@ -5,55 +5,61 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h4>Average Statistics for the Selected Matches</h4>
-        <div class="row">
-            <div class="col-md-1 col-xs-2">
-                <h3>{{ctrl.pulled.length}}</h3>
-                <h5>Matches</h5>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Average Statistics for the {{ctrl.pulled.length}} Selected Matches</h4>
             </div>
-            <div class="col-md-1 col-xs-2">
-                <h3>{{ctrl.averages.length}}</h3>
-                <h5>Duration</h5>
-            </div>
-            <div class="col-md-1 col-xs-2">
-                <h3>{{ctrl.averages.kills | number:2}}</h3>
-                <h5>Kills</h5>
-            </div>
-            <div class="col-md-1 col-xs-2">
-                <h3>{{ctrl.averages.deaths | number:2}}</h3>
-                <h5>Deaths</h5>
-            </div>
-            <div class="col-md-1 col-xs-2">
-                <h3>{{ctrl.averages.assists | number:2}}</h3>
-                <h5>Assists</h5>
-            </div>
-            <div class="col-md-1 col-xs-2">
-                <h3>{{ctrl.averages.cs | number:2}}</h3>
-                <h5>Assists</h5>
-            </div>
-            <div class="col-md-1 col-xs-2">
-                <h3>{{ctrl.averages.denies | number:2}}</h3>
-                <h5>Assists</h5>
-            </div>
-            <div class="col-md-1 col-xs-2">
-                <h3>{{ctrl.averages.gpm | number:0}}</h3>
-                <h5>GPM</h5>
-            </div>
-            <div class="col-md-1 col-xs-2">
-                <h3>{{ctrl.averages.xpm | number:0}}</h3>
-                <h5>XPM</h5>
-            </div>
-            <div class="col-md-1 col-xs-2">
-                <h3>{{ctrl.averages.apm | number:0}}</h3>
-                <h5>APM</h5>
-            </div>
-            <div class="col-md-1 col-xs-2">
-                <h3>{{ctrl.averages.wards | number:2}}</h3>
-                <h5>Wards</h5>
-            </div>
-            <div class="col-md-1 col-xs-2">
-                <h3>{{ctrl.averages.herodmg | numeraljs:'0.0a' }}</h3>
-                <h5>HD</h5>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-1 col-xs-2">
+                        <h3>{{ctrl.averages.length || 0}}</h3>
+                        <h5>Duration</h5>
+                    </div>
+                    <div class="col-md-1 col-xs-2">
+                        <h3>{{ctrl.averages.kills || 0 | number:2}}</h3>
+                        <h5>Kills</h5>
+                    </div>
+                    <div class="col-md-1 col-xs-2">
+                        <h3>{{ctrl.averages.deaths || 0 | number:2}}</h3>
+                        <h5>Deaths</h5>
+                    </div>
+                    <div class="col-md-1 col-xs-2">
+                        <h3>{{ctrl.averages.assists || 0 | number:2}}</h3>
+                        <h5>Assists</h5>
+                    </div>
+                    <div class="col-md-1 col-xs-2">
+                        <h3>{{ctrl.averages.cs || 0 | number:2}}</h3>
+                        <h5>Assists</h5>
+                    </div>
+                    <div class="col-md-1 col-xs-2">
+                        <h3>{{ctrl.averages.denies || 0 | number:2}}</h3>
+                        <h5>Assists</h5>
+                    </div>
+                    <div class="col-md-1 col-xs-2">
+                        <h3>{{ctrl.averages.gpm || 0 | number:0}}</h3>
+                        <h5>GPM</h5>
+                    </div>
+                    <div class="col-md-1 col-xs-2">
+                        <h3>{{ctrl.averages.xpm || 0 | number:0}}</h3>
+                        <h5>XPM</h5>
+                    </div>
+                    <div class="col-md-1 col-xs-2">
+                        <h3>{{ctrl.averages.apm || 0 | number:0}}</h3>
+                        <h5>APM</h5>
+                    </div>
+                    <div class="col-md-1 col-xs-2">
+                        <h3>{{ctrl.averages.wards || 0 | number:2}}</h3>
+                        <h5>Wards</h5>
+                    </div>
+                    <div class="col-md-1 col-xs-2">
+                        <h3>{{ctrl.averages.herodmg || 0 | numeraljs:'0.0a' }}</h3>
+                        <h5>HeroDMG</h5>
+                    </div>
+                    <div class="col-md-1 col-xs-2">
+                        <h3>{{ctrl.averages.bdmg || 0 | numeraljs:'0.0a' }}</h3>
+                        <h5>TowerDMG</h5>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -76,6 +82,7 @@
                         <th class="text-center">TD</th>
                         <th class="text-center">+/-</th>
                         <th class="text-center">Date</th>
+                        <th style="text-align:left" class="text-center">Items</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -92,6 +99,11 @@
                         <td>{{ ::match.bdmg | numeraljs:'0.0a' }}</td>
                         <td>{{ ::match.mmr_change | number:1 }}</td>
                         <td am-time-ago="match.date"></td>
+                        <td style="text-align:left">
+                            <a ng-repeat="item in match.items track by $index" ng-href="/item/{{ item }}/" data-title="<span>{{ctrl.items[item].name}}</span> <span class='text-gold'>{{ctrl.items[item].cost}}</span>" data-html="True" bs-tooltip>
+                                <img ng-if="item" ng-src="assets/images/items/{{ item }}.jpg" width="30">
+                            </a>
+                        </td>
                     </tr>
                 </tbody>
             </table>

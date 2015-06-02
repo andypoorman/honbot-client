@@ -16,11 +16,12 @@ class PlayerMatchesDirective {
 }
 
 class PlayerMatchesCtrl {
-    constructor($location, $cookies, $routeParams, ApiService, $alert) {
+    constructor($location, $routeParams, ApiService, $alert, heroData) {
         'ngInject';
 
         this.m = $routeParams.mode || 'rnk';
         this.nickname = $routeParams.player;
+        this.$location = $location;
 
         this.activate(ApiService, $alert);
     }
@@ -45,11 +46,13 @@ class PlayerMatchesCtrl {
     setup() {
         var that = this;
         that.pulled = [];
-        angular.forEach(this.all, function(obj) {
+        that.heroes = [];
+        _.forEach(this.all, function(obj) {
             let temp = _.find(obj.players, 'player_id', that.player.account_id);
             temp.date = moment(obj.date);
             temp.length = obj.length;
             temp.version = obj.version;
+            temp.match_id = obj.id;
             that.pulled.push(temp);
         });
         that.filter();
@@ -77,6 +80,9 @@ class PlayerMatchesCtrl {
             }
         });
         that.averages.length = moment.duration((totals.length / that.filtered.length), 'seconds').format();
+    }
+    goMatch(match) {
+        this.$location.path(`/match/${match}`);
     }
 }
 
