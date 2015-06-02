@@ -16,9 +16,8 @@ class PlayerStatsDirective {
 }
 
 class PlayerStatsCtrl {
-    constructor($routeParams, ApiService, $alert, BaseUrl) {
+    constructor($routeParams, ApiService, $alert) {
         'ngInject';
-        this.BaseUrl = BaseUrl.host;
 
         this.m = $routeParams.mode || 'rnk';
 
