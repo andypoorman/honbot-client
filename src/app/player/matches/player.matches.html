@@ -86,7 +86,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="match in ctrl.filtered track by $index" ng-click="ctrl.goMatch(match.match_id)" ng-class="{matchloss: !match.win, matchwin: match.win}">
+                    <tr ng-repeat="match in ctrl.filtered | orderBy:'-date' | limitTo:50 " ng-click="ctrl.goMatch(match.match_id)" ng-class="{matchloss: !match.win, matchwin: match.win}">
                         <td><img ng-src="//www.heroesofnewerth.com/images/heroes/{{ ::match.hero_id }}/icon_128.jpg" width="30">{{ ::match.level }}</td>
                         <td>{{ ::match.kills }}</td>
                         <td>{{ ::match.deaths }}</td>
@@ -100,8 +100,8 @@
                         <td>{{ ::match.mmr_change | number:1 }}</td>
                         <td am-time-ago="match.date"></td>
                         <td style="text-align:left">
-                            <a ng-repeat="item in match.items track by $index" ng-href="/item/{{ item }}/" data-title="<span>{{ctrl.items[item].name}}</span> <span class='text-gold'>{{ctrl.items[item].cost}}</span>" data-html="True" bs-tooltip>
-                                <img ng-if="item" ng-src="assets/images/items/{{ item }}.jpg" width="30">
+                            <a ng-repeat="item in match.items track by $index" ng-href="/item/{{ ::item }}/" data-title="<span>{{ ::ctrl.items[item].name }}</span> <span class='text-gold'>{{ ::ctrl.items[item].cost }}</span>" data-html="True" bs-tooltip>
+                                <img ng-if="item" ng-src="assets/images/items/{{ ::item }}.jpg" width="30">
                             </a>
                         </td>
                     </tr>
