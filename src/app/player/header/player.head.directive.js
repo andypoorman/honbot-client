@@ -18,14 +18,13 @@ class PlayerHeadDirective {
 }
 
 class PlayerHeadCtrl {
-    constructor($location, $cookies, $routeParams, ApiService) {
+    constructor($location, $routeParams, ApiService, BookmarkService) {
         'ngInject';
 
         this.$location = $location;
         this.nickname = $routeParams.player;
         this.m = $routeParams.mode || 'rnk';
-        this.$cookies = $cookies;
-        this.bookmarkedPlayers = $cookies.getObject('bookmarkedPlayers') || [];
+        this.BookmarkService = BookmarkService;
 
         ApiService.singlePlayer(this.nickname).success(res => {
             this.s = res;
@@ -40,21 +39,6 @@ class PlayerHeadCtrl {
     }
     changeMode(newmode) {
         this.$location.search('mode', newmode);
-    }
-    toggleBookmark(nickname) {
-        if (this.checkPlayerExists(nickname)) {
-            this.bookmarkedPlayers = _.filter(this.bookmarkedPlayers, function(n) {
-                if (n !== nickname) {
-                    return n;
-                }
-            });
-        } else {
-            this.bookmarkedPlayers.unshift(nickname);
-        }
-        this.$cookies.putObject('bookmarkedPlayers', this.bookmarkedPlayers);
-    }
-    checkPlayerExists(nickname) {
-        return _.includes(this.bookmarkedPlayers, nickname);
     }
 }
 

@@ -1,10 +1,12 @@
 <!-- Main Hero -->
+<hb-navbar></hb-navbar>
 <div class="home" ng-style="ctrl.jumbostyle">
     <div class="mainjumbo">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <img src="/assets/images/mainlogo.png" height="176">
+                    <!-- <h1>HonBot</h1> -->
+                    <img src="/assets/images/mainlogo.png" height="150" alt="honbot logo">
                 </div>
             </div>
             <div class="row">
@@ -19,7 +21,7 @@
                     </form>
                 </div>
             </div>
-            <!--             <div class="row">
+            <div class="row">
                 <div class="col-md-4 col-md-offset-4">
                     <br>
                     <ul class="list-inline text-center home-inline">
@@ -30,27 +32,10 @@
                     </ul>
                     <br>
                 </div>
-            </div> -->
-        </div>
-    </div>
-    <br>
-    <div class="container">
-        <div class="row" ng-if="ctrl.bookmarkedPlayers.length">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="well well-sm">
-                    <div class="">
-                        <h4 class="text-center">Bookedmarked</h4>
-                    </div>
-                    <div class="text-center">
-                        <ul class="list-inline home-inline">
-                            <li ng-repeat="mark in ctrl.bookmarkedPlayers track by $index">
-                                <a href="/player/{{mark}}/">{{mark}}</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
+    </div>
+    <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="well well-sm">

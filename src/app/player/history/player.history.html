@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="match in ctrl.history" ng-click="ctrl.goMatch(match.match_id)" ng-class="{matchloss: !match.win, matchwin: match.win}">
+            <tr ng-repeat="match in ctrl.history track by $index" ng-click="ctrl.goMatch(match.match_id)" ng-class="{matchloss: !match.win, matchwin: match.win}">
                 <td><img ng-src="//www.heroesofnewerth.com/images/heroes/{{ ::match.hero_id }}/icon_128.jpg" width="30">{{ ::match.level }}</td>
                 <td>{{ ::match.kills }}</td>
                 <td>{{ ::match.deaths }}</td>
@@ -31,13 +31,7 @@
     </table>
 </div>
 <div class="text-center">
-    <div ng-show="ctrl.loading" class="spinner">
-        <div class="rect1"></div>
-        <div class="rect2"></div>
-        <div class="rect3"></div>
-        <div class="rect4"></div>
-        <div class="rect5"></div>
-    </div>
+    <div ng-show="ctrl.loading" class="spinner"></div>
     <p ng-show="ctrl.nomore">Reached the end of available matches</p>
     <a ng-click="ctrl.more()" ng-show="!ctrl.nomore && !ctrl.loading" class="btn btn-default btn-small">More</a>
 </div>

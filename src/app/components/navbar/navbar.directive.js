@@ -16,10 +16,15 @@ class NavbarDirective {
 }
 
 class NavbarController {
-    constructor(moment, $location) {
+    constructor($location, BookmarkService) {
         'ngInject';
 
         this.$location = $location;
+
+        let that = this;
+        BookmarkService.setupDropdown(function(dropdown){
+            that.dropdown = dropdown;
+        });
     }
     search() {
         if (this.nick) {
