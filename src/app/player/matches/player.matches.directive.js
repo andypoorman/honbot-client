@@ -38,7 +38,7 @@ class PlayerMatchesCtrl {
             ApiService.playerCache(player.account_id, this.m).success(res => {
                 this.all = res;
                 this.setup();
-                that.issetup = true;
+                this.issetup = true;
             });
         }).error((res) => {
             $alert({
@@ -81,7 +81,7 @@ class PlayerMatchesCtrl {
         let that = this;
         let temp = this.pulled;
         temp = _.filter(temp, function(n) {
-            if(!that.$scope.selectedHero){
+            if(!that.$scope.selectedHero || that.$scope.selectedHero.length == 0){
                 return n;
             }
             if (_.includes(that.$scope.selectedHero, n.hero_id)) {
@@ -89,7 +89,7 @@ class PlayerMatchesCtrl {
             }
         });
         this.filtered = temp;
-        console.log(temp)
+        console.log(temp);
         this.totals();
     }
     totals() {
