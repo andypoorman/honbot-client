@@ -1,13 +1,17 @@
+<br>
 <div class="row">
     <div class="col-xs-12">
-        swag filters
+        <button type="button" placeholder="Heroes" class="btn btn-default" ng-model="selectedHero" data-multiple="true" data-sort="false" data-all-none-buttons="true" bs-options="hero.value as hero.label for hero in ctrl.heroes" bs-select>
+            Action <span class="caret"></span>
+        </button>
     </div>
 </div>
+<br>
 <div class="row">
     <div class="col-xs-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4>Average Statistics for the {{ctrl.pulled.length}} Selected Matches</h4>
+                <h4>Average Statistics for the {{ctrl.filtered.length}} Selected Matches</h4>
             </div>
             <div class="panel-body">
                 <div class="row">
