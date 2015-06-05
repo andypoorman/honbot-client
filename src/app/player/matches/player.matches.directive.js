@@ -23,12 +23,7 @@ class PlayerMatchesCtrl {
         this.nickname = $routeParams.player;
         this.$location = $location;
         this.$scope = $scope;
-
-        let that = this;
-        this.heroData = [];
-        _.forEach(heroData, function(n) {
-            that.heroData[_.keys(n)[0]] = n[_.keys(n)[0]];
-        });
+        this.heroData = heroData;
 
         this.activate(ApiService, $alert, $scope);
     }
@@ -80,7 +75,7 @@ class PlayerMatchesCtrl {
     filter() {
         let that = this;
         let temp = this.pulled;
-        if(this.$scope.selectedHero && this.$scope.selectedHero.length !== 0){
+        if (this.$scope.selectedHero && this.$scope.selectedHero.length !== 0) {
             temp = _.filter(temp, function(n) {
                 if (_.includes(that.$scope.selectedHero, n.hero_id)) {
                     return n;

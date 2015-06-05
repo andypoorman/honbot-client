@@ -2,8 +2,6 @@ class MatchCtrl {
     constructor($routeParams, ApiService, heroData, $scope, $alert, itemList) {
         'ngInject';
 
-        let vm = this;
-
         this.heroData = {};
         this.team1 = {};
         this.team2 = {};
@@ -11,6 +9,7 @@ class MatchCtrl {
         this.items = itemList;
         this.matchid = $routeParams.match;
         this.$scope = $scope;
+        this.heroData = heroData;
 
         this.modes = {
             1: 'rnk',
@@ -29,11 +28,7 @@ class MatchCtrl {
             {value: 'herodmg', label: 'Hero Damage'},
             {value: 'bdmg', label: 'Kills'},
         ];
-        $scope.selectedGraph = vm.options[4];
-
-        _.forEach(heroData, function(n) {
-            vm.heroData[_.keys(n)[0]] = n[_.keys(n)[0]];
-        });
+        $scope.selectedGraph = this.options[4];
 
 
         this.activate($scope, $alert, ApiService);

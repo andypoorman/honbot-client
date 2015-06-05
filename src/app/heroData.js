@@ -1,5 +1,4 @@
 var heroData = {
-  "Hero_Armadon": {
     "2": {
       "hero_id": "2",
       "disp_name": "Armadon",
@@ -7,9 +6,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Behemoth": {
+    },
     "3": {
       "hero_id": "3",
       "disp_name": "Behemoth",
@@ -17,9 +14,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Chronos": {
+    },
     "4": {
       "hero_id": "4",
       "disp_name": "Chronos",
@@ -27,9 +22,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Defiler": {
+    },
     "5": {
       "hero_id": "5",
       "disp_name": "Defiler",
@@ -37,9 +30,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Devourer": {
+    },
     "6": {
       "hero_id": "6",
       "disp_name": "Devourer",
@@ -47,9 +38,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_DwarfMagi": {
+    },
     "7": {
       "hero_id": "7",
       "disp_name": "Blacksmith",
@@ -57,9 +46,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Ebulus": {
+    },
     "8": {
       "hero_id": "8",
       "disp_name": "Slither",
@@ -67,9 +54,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Electrician": {
+    },
     "9": {
       "hero_id": "9",
       "disp_name": "Electrician",
@@ -77,9 +62,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Fairy": {
+    },
     "10": {
       "hero_id": "10",
       "disp_name": "Nymphora",
@@ -87,9 +70,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Frosty": {
+    },
     "12": {
       "hero_id": "12",
       "disp_name": "Glacius",
@@ -97,9 +78,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Hammerstorm": {
+    },
     "13": {
       "hero_id": "13",
       "disp_name": "Hammerstorm",
@@ -107,9 +86,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Hantumon": {
+    },
     "14": {
       "hero_id": "14",
       "disp_name": "Night Hound",
@@ -117,9 +94,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Hiro": {
+    },
     "15": {
       "hero_id": "15",
       "disp_name": "Swiftblade",
@@ -127,9 +102,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Hunter": {
+    },
     "16": {
       "hero_id": "16",
       "disp_name": "Blood Hunter",
@@ -137,9 +110,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Kraken": {
+    },
     "17": {
       "hero_id": "17",
       "disp_name": "Kraken",
@@ -147,9 +118,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Kunas": {
+    },
     "18": {
       "hero_id": "18",
       "disp_name": "Thunderbringer",
@@ -157,9 +126,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Krixi": {
+    },
     "20": {
       "hero_id": "20",
       "disp_name": "Moon Queen",
@@ -167,9 +134,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_PollywogPriest": {
+    },
     "21": {
       "hero_id": "21",
       "disp_name": "Pollywog Priest",
@@ -177,9 +142,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Rocky": {
+    },
     "22": {
       "hero_id": "22",
       "disp_name": "Pebbles",
@@ -187,9 +150,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Soulstealer": {
+    },
     "24": {
       "hero_id": "24",
       "disp_name": "Soulstealer",
@@ -197,9 +158,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Treant": {
+    },
     "25": {
       "hero_id": "25",
       "disp_name": "Keeper of the Forest",
@@ -207,9 +166,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Vanya": {
+    },
     "26": {
       "hero_id": "26",
       "disp_name": "The Dark Lady",
@@ -217,9 +174,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Shaman": {
+    },
     "43": {
       "hero_id": "43",
       "disp_name": "Demented Shaman",
@@ -227,9 +182,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Voodoo": {
+    },
     "27": {
       "hero_id": "27",
       "disp_name": "Voodoo Jester",
@@ -237,9 +190,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_WolfMan": {
+    },
     "29": {
       "hero_id": "29",
       "disp_name": "War Beast",
@@ -247,9 +198,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Yogi": {
+    },
     "30": {
       "hero_id": "30",
       "disp_name": "Wildsoul",
@@ -257,9 +206,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Pearl": {
+    },
     "227": {
       "hero_id": "227",
       "disp_name": "Pearl",
@@ -267,9 +214,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Zephyr": {
+    },
     "31": {
       "hero_id": "31",
       "disp_name": "Zephyr",
@@ -277,9 +222,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Mumra": {
+    },
     "34": {
       "hero_id": "34",
       "disp_name": "Pharaoh",
@@ -287,9 +230,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Tempest": {
+    },
     "35": {
       "hero_id": "35",
       "disp_name": "Tempest",
@@ -297,9 +238,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Ophelia": {
+    },
     "36": {
       "hero_id": "36",
       "disp_name": "Ophelia",
@@ -307,9 +246,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Moraxus": {
+    },
     "165": {
       "hero_id": "165",
       "disp_name": "Moraxus",
@@ -317,9 +254,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Javaras": {
+    },
     "37": {
       "hero_id": "37",
       "disp_name": "Magebane",
@@ -327,9 +262,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Legionnaire": {
+    },
     "38": {
       "hero_id": "38",
       "disp_name": "Legionnaire",
@@ -337,9 +270,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Predator": {
+    },
     "39": {
       "hero_id": "39",
       "disp_name": "Predator",
@@ -347,9 +278,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Accursed": {
+    },
     "40": {
       "hero_id": "40",
       "disp_name": "Accursed",
@@ -357,9 +286,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Nomad": {
+    },
     "41": {
       "hero_id": "41",
       "disp_name": "Nomad",
@@ -367,9 +294,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Scar": {
+    },
     "42": {
       "hero_id": "42",
       "disp_name": "The Madman",
@@ -377,9 +302,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Scout": {
+    },
     "44": {
       "hero_id": "44",
       "disp_name": "Scout",
@@ -387,9 +310,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Pyromancer": {
+    },
     "94": {
       "hero_id": "94",
       "disp_name": "Pyromancer",
@@ -397,9 +318,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_PuppetMaster": {
+    },
     "91": {
       "hero_id": "91",
       "disp_name": "Puppet Master",
@@ -407,9 +326,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Pestilence": {
+    },
     "95": {
       "hero_id": "95",
       "disp_name": "Pestilence",
@@ -417,9 +334,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Maliken": {
+    },
     "96": {
       "hero_id": "96",
       "disp_name": "Maliken",
@@ -427,9 +342,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Arachna": {
+    },
     "92": {
       "hero_id": "92",
       "disp_name": "Arachna",
@@ -437,9 +350,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Hellbringer": {
+    },
     "93": {
       "hero_id": "93",
       "disp_name": "Hellbringer",
@@ -447,9 +358,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Xalynx": {
+    },
     "90": {
       "hero_id": "90",
       "disp_name": "Torturer",
@@ -457,9 +366,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Jereziah": {
+    },
     "89": {
       "hero_id": "89",
       "disp_name": "Jeraziah",
@@ -467,9 +374,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Andromeda": {
+    },
     "102": {
       "hero_id": "102",
       "disp_name": "Andromeda",
@@ -477,9 +382,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Valkyrie": {
+    },
     "103": {
       "hero_id": "103",
       "disp_name": "Valkyrie",
@@ -487,9 +390,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_BabaYaga": {
+    },
     "104": {
       "hero_id": "104",
       "disp_name": "Wretched Hag",
@@ -497,9 +398,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Succubis": {
+    },
     "105": {
       "hero_id": "105",
       "disp_name": "Succubus",
@@ -507,9 +406,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Magmar": {
+    },
     "106": {
       "hero_id": "106",
       "disp_name": "Magmus",
@@ -517,9 +414,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_DiseasedRider": {
+    },
     "108": {
       "hero_id": "108",
       "disp_name": "Plague Rider",
@@ -527,9 +422,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_HellDemon": {
+    },
     "109": {
       "hero_id": "109",
       "disp_name": "Soul Reaper",
@@ -537,9 +430,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Panda": {
+    },
     "110": {
       "hero_id": "110",
       "disp_name": "Pandamonium",
@@ -547,9 +438,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Vindicator": {
+    },
     "115": {
       "hero_id": "115",
       "disp_name": "Vindicator",
@@ -557,9 +446,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_CorruptedDisciple": {
+    },
     "114": {
       "hero_id": "114",
       "disp_name": "Corrupted Disciple",
@@ -567,9 +454,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_SandWraith": {
+    },
     "116": {
       "hero_id": "116",
       "disp_name": "Sand Wraith",
@@ -577,9 +462,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Rampage": {
+    },
     "117": {
       "hero_id": "117",
       "disp_name": "Rampage",
@@ -587,9 +470,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_WitchSlayer": {
+    },
     "120": {
       "hero_id": "120",
       "disp_name": "Witch Slayer",
@@ -597,9 +478,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_ForsakenArcher": {
+    },
     "121": {
       "hero_id": "121",
       "disp_name": "Forsaken Archer",
@@ -607,9 +486,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Engineer": {
+    },
     "122": {
       "hero_id": "122",
       "disp_name": "Engineer",
@@ -617,9 +494,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Deadwood": {
+    },
     "123": {
       "hero_id": "123",
       "disp_name": "Deadwood",
@@ -627,9 +502,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Chipper": {
+    },
     "124": {
       "hero_id": "124",
       "disp_name": "The Chipper",
@@ -637,9 +510,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Bubbles": {
+    },
     "125": {
       "hero_id": "125",
       "disp_name": "Bubbles",
@@ -647,9 +518,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Fade": {
+    },
     "126": {
       "hero_id": "126",
       "disp_name": "Fayde",
@@ -657,9 +526,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Bephelgor": {
+    },
     "127": {
       "hero_id": "127",
       "disp_name": "Balphagore",
@@ -667,9 +534,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Gauntlet": {
+    },
     "128": {
       "hero_id": "128",
       "disp_name": "Gauntlet",
@@ -677,9 +542,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Tundra": {
+    },
     "160": {
       "hero_id": "160",
       "disp_name": "Tundra",
@@ -687,9 +550,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Gladiator": {
+    },
     "161": {
       "hero_id": "161",
       "disp_name": "The Gladiator",
@@ -697,9 +558,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_DoctorRepulsor": {
+    },
     "162": {
       "hero_id": "162",
       "disp_name": "Doctor Repulsor",
@@ -707,9 +566,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Tremble": {
+    },
     "170": {
       "hero_id": "170",
       "disp_name": "Tremble",
@@ -717,9 +574,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_FlintBeastwood": {
+    },
     "163": {
       "hero_id": "163",
       "disp_name": "Flint Beastwood",
@@ -727,9 +582,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Bombardier": {
+    },
     "164": {
       "hero_id": "164",
       "disp_name": "Bombardier",
@@ -737,9 +590,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Hydromancer": {
+    },
     "166": {
       "hero_id": "166",
       "disp_name": "Myrmidon",
@@ -747,9 +598,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Dampeer": {
+    },
     "167": {
       "hero_id": "167",
       "disp_name": "Dampeer",
@@ -757,9 +606,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Empath": {
+    },
     "168": {
       "hero_id": "168",
       "disp_name": "Empath",
@@ -767,9 +614,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Aluna": {
+    },
     "169": {
       "hero_id": "169",
       "disp_name": "Aluna",
@@ -777,9 +622,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Silhouette": {
+    },
     "185": {
       "hero_id": "185",
       "disp_name": "Silhouette",
@@ -787,9 +630,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Flux": {
+    },
     "187": {
       "hero_id": "187",
       "disp_name": "Flux",
@@ -797,9 +638,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Martyr": {
+    },
     "188": {
       "hero_id": "188",
       "disp_name": "Martyr",
@@ -807,9 +646,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Ra": {
+    },
     "192": {
       "hero_id": "192",
       "disp_name": " \t\tAmun-Ra",
@@ -817,9 +654,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Parasite": {
+    },
     "194": {
       "hero_id": "194",
       "disp_name": "Parasite",
@@ -827,9 +662,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_EmeraldWarden": {
+    },
     "195": {
       "hero_id": "195",
       "disp_name": "Emerald Warden",
@@ -837,9 +670,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Revenant": {
+    },
     "196": {
       "hero_id": "196",
       "disp_name": "Revenant",
@@ -847,9 +678,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_MonkeyKing": {
+    },
     "197": {
       "hero_id": "197",
       "disp_name": "Monkey King",
@@ -857,9 +686,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_DrunkenMaster": {
+    },
     "201": {
       "hero_id": "201",
       "disp_name": "Drunken Master",
@@ -867,9 +694,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_MasterOfArms": {
+    },
     "202": {
       "hero_id": "202",
       "disp_name": "Master Of Arms",
@@ -877,9 +702,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Rhapsody": {
+    },
     "203": {
       "hero_id": "203",
       "disp_name": "Rhapsody",
@@ -887,9 +710,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Geomancer": {
+    },
     "204": {
       "hero_id": "204",
       "disp_name": "Geomancer",
@@ -897,9 +718,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Midas": {
+    },
     "205": {
       "hero_id": "205",
       "disp_name": "Midas",
@@ -907,9 +726,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Cthulhuphant": {
+    },
     "206": {
       "hero_id": "206",
       "disp_name": "Cthulhuphant",
@@ -917,9 +734,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Monarch": {
+    },
     "207": {
       "hero_id": "207",
       "disp_name": "Monarch",
@@ -927,9 +742,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Gemini": {
+    },
     "208": {
       "hero_id": "208",
       "disp_name": "Gemini",
@@ -937,9 +750,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Dreadknight": {
+    },
     "209": {
       "hero_id": "209",
       "disp_name": "Lord Salforis",
@@ -947,9 +758,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_ShadowBlade": {
+    },
     "210": {
       "hero_id": "210",
       "disp_name": "Shadowblade",
@@ -957,9 +766,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Kenisis": {
+    },
     "215": {
       "hero_id": "215",
       "disp_name": "Kinesis",
@@ -967,9 +774,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Artesia": {
+    },
     "211": {
       "hero_id": "211",
       "disp_name": "Artesia",
@@ -977,9 +782,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Taint": {
+    },
     "212": {
       "hero_id": "212",
       "disp_name": "Gravekeeper",
@@ -987,9 +790,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Berzerker": {
+    },
     "213": {
       "hero_id": "213",
       "disp_name": "Berzerker",
@@ -997,9 +798,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_FlameDragon": {
+    },
     "214": {
       "hero_id": "214",
       "disp_name": "Draconis",
@@ -1007,9 +806,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Blitz": {
+    },
     "217": {
       "hero_id": "217",
       "disp_name": "Blitz",
@@ -1017,9 +814,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Ellonia": {
+    },
     "219": {
       "hero_id": "219",
       "disp_name": "Ellonia",
@@ -1027,9 +822,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Gunblade": {
+    },
     "216": {
       "hero_id": "216",
       "disp_name": "Gunblade",
@@ -1037,9 +830,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Artillery": {
+    },
     "218": {
       "hero_id": "218",
       "disp_name": "Artillery",
@@ -1047,9 +838,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Riftmage": {
+    },
     "220": {
       "hero_id": "220",
       "disp_name": "Riftwalker",
@@ -1057,9 +846,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Plant": {
+    },
     "221": {
       "hero_id": "221",
       "disp_name": "Bramble",
@@ -1067,9 +854,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Ravenor": {
+    },
     "222": {
       "hero_id": "222",
       "disp_name": "Ravenor",
@@ -1077,9 +862,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Prophet": {
+    },
     "223": {
       "hero_id": "223",
       "disp_name": "Prophet",
@@ -1087,9 +870,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Rally": {
+    },
     "224": {
       "hero_id": "224",
       "disp_name": "Rally",
@@ -1097,9 +878,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Grinex": {
+    },
     "228": {
       "hero_id": "228",
       "disp_name": "Grinex",
@@ -1107,9 +886,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Oogie": {
+    },
     "225": {
       "hero_id": "225",
       "disp_name": "Oogie",
@@ -1117,9 +894,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Solstice": {
+    },
     "226": {
       "hero_id": "226",
       "disp_name": "Solstice",
@@ -1127,9 +902,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Lodestone": {
+    },
     "229": {
       "hero_id": "229",
       "disp_name": "Lodestone",
@@ -1137,9 +910,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Bushwack": {
+    },
     "230": {
       "hero_id": "230",
       "disp_name": "Bushwack",
@@ -1147,9 +918,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Salomon": {
+    },
     "232": {
       "hero_id": "232",
       "disp_name": "Salomon",
@@ -1157,9 +926,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Prisoner": {
+    },
     "233": {
       "hero_id": "233",
       "disp_name": "Prisoner 945",
@@ -1167,9 +934,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_SirBenzington": {
+    },
     "234": {
       "hero_id": "234",
       "disp_name": "Sir Benzington",
@@ -1177,9 +942,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "melee",
       "team": "Legion"
-    }
-  },
-  "Hero_Circe": {
+    },
     "235": {
       "hero_id": "235",
       "disp_name": "Circe",
@@ -1187,9 +950,7 @@ var heroData = {
       "primaryattribute": "Intelligence",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Klanx": {
+    },
     "236": {
       "hero_id": "236",
       "disp_name": "Klanx",
@@ -1197,9 +958,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Riptide": {
+    },
     "237": {
       "hero_id": "237",
       "disp_name": "Riptide",
@@ -1207,9 +966,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Moira": {
+    },
     "238": {
       "hero_id": "238",
       "disp_name": "Moira",
@@ -1217,9 +974,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Tarot": {
+    },
     "239": {
       "hero_id": "239",
       "disp_name": "Tarot",
@@ -1227,9 +982,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Legion"
-    }
-  },
-  "Hero_Kane": {
+    },
     "240": {
       "hero_id": "240",
       "disp_name": "Kane",
@@ -1237,9 +990,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Calamity": {
+    },
     "241": {
       "hero_id": "241",
       "disp_name": "Calamity",
@@ -1247,9 +998,7 @@ var heroData = {
       "primaryattribute": "Agility",
       "attacktype": "ranged",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Deadlift": {
+    },
     "242": {
       "hero_id": "242",
       "disp_name": "Deadlift",
@@ -1257,9 +1006,7 @@ var heroData = {
       "primaryattribute": "Strength",
       "attacktype": "melee",
       "team": "Hellbourne"
-    }
-  },
-  "Hero_Parallax": {
+    },
     "243": {
       "hero_id": "243",
       "disp_name": "Parallax",
@@ -1268,7 +1015,6 @@ var heroData = {
       "attacktype": "ranged",
       "team": "Hellbourne"
     }
-  }
-};
+  };
 
 export default heroData;
