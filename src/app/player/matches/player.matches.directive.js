@@ -61,7 +61,7 @@ class PlayerMatchesCtrl {
     setup() {
         var that = this;
         that.pulled = [];
-        that.heroes = [];
+        let tempheroes = [];
         _.forEach(this.all, function(obj) {
             let temp = _.find(obj.players, 'player_id', that.player.account_id);
             temp.date = moment(obj.date);
@@ -69,27 +69,25 @@ class PlayerMatchesCtrl {
             temp.version = obj.version;
             temp.match_id = obj.id;
             that.pulled.push(temp);
-            that.heroes.push({
+            tempheroes.push({
                 value: temp.hero_id,
                 label: that.heroData[temp.hero_id].disp_name
             });
         });
-        that.heroes = _.chain(that.heroes).uniq('value').sortBy('label').value();
-        that.filter();
+        this.filter();
+        this.heroes = _.chain(tempheroes).uniq('value').sortBy('label').value();
     }
     filter() {
         let that = this;
         let temp = this.pulled;
-        temp = _.filter(temp, function(n) {
-            if(!that.$scope.selectedHero || that.$scope.selectedHero.length == 0){
-                return n;
-            }
-            if (_.includes(that.$scope.selectedHero, n.hero_id)) {
-                return n;
-            }
-        });
+        if(this.$scope.selectedHero && this.$scope.selectedHero.length !== 0){
+            temp = _.filter(temp, function(n) {
+                if (_.includes(that.$scope.selectedHero, n.hero_id)) {
+                    return n;
+                }
+            });
+        }
         this.filtered = temp;
-        console.log(temp);
         this.totals();
     }
     totals() {
