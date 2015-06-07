@@ -35,19 +35,10 @@ class PlayerMatchesCtrl {
                 this.setup();
                 this.issetup = true;
             });
-        }).error((res) => {
-            $alert({
-                title: 'ERROR:',
-                content: res.error,
-                placement: 'top',
-                container: 'alert',
-                type: 'danger',
-                show: true
-            });
         });
 
         let that = this;
-        $scope.$watch('selectedHero', function() {
+        $scope.$watchGroup(['selectedHero', 'selectedVersion'], function() {
             if (that.issetup) {
                 that.filter();
             }
@@ -55,8 +46,9 @@ class PlayerMatchesCtrl {
     }
     setup() {
         var that = this;
-        that.pulled = [];
+        this.pulled = [];
         let tempheroes = [];
+        let tempversions = [];
         _.forEach(this.all, function(obj) {
             let temp = _.find(obj.players, 'player_id', that.player.account_id);
             temp.date = moment(obj.date);
@@ -68,16 +60,26 @@ class PlayerMatchesCtrl {
                 value: temp.hero_id,
                 label: that.heroData[temp.hero_id].disp_name
             });
+            tempversions.push(obj.version);
         });
         this.filter();
         this.heroes = _.chain(tempheroes).uniq('value').sortBy('label').value();
+        this.versions = _.chain(tempversions).uniq().value();
     }
     filter() {
-        let that = this;
         let temp = this.pulled;
         if (this.$scope.selectedHero && this.$scope.selectedHero.length !== 0) {
+            let selectedHero = this.$scope.selectedHero;
             temp = _.filter(temp, function(n) {
-                if (_.includes(that.$scope.selectedHero, n.hero_id)) {
+                if (_.includes(selectedHero, n.hero_id)) {
+                    return n;
+                }
+            });
+        }
+        if (this.$scope.selectedVersion && this.$scope.selectedVersion.length !== 0) {
+            let selectedVersion = this.$scope.selectedVersion;
+            temp = _.filter(temp, function(n) {
+                if (_.includes(selectedVersion, n.version)) {
                     return n;
                 }
             });
@@ -86,9 +88,8 @@ class PlayerMatchesCtrl {
         this.totals();
     }
     totals() {
-        var that = this;
-        var totals = {};
-        _.forEach(that.filtered, function(n) {
+        let totals = {};
+        _.forEach(this.filtered, function(n) {
             _.forIn(n, function(j, key) {
                 if (!totals[key]) {
                     totals[key] = Number(j);
@@ -97,13 +98,15 @@ class PlayerMatchesCtrl {
                 }
             });
         });
-        that.averages = {};
+        let averages = {};
+        let matches = this.filtered.length;
         _.forIn(totals, function(val, key) {
             if (angular.isNumber(val)) {
-                that.averages[key] = val / that.filtered.length;
+                averages[key] = val / matches;
             }
         });
-        that.averages.length = moment.duration((totals.length / that.filtered.length), 'seconds').format();
+        this.averages = averages;
+        this.averages.length = moment.duration((totals.length / matches), 'seconds').format();
     }
     goMatch(match) {
         this.$location.path(`/match/${match}`);
