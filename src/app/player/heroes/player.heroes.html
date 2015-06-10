@@ -1,0 +1,47 @@
+<br>
+<div class="row">
+    <div class="col-xs-12">
+        <button type="button" placeholder="Versions" class="btn btn-default" ng-model="selectedVersion" data-multiple="true" data-sort="false" bs-options="version for version in ctrl.versions" bs-select>
+            Action <span class="caret"></span>
+        </button>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="table-responsive">
+            <table id="match" class="table table-header table-striped table-condensed">
+                <thead>
+                    <tr>
+                        <th class="text-center">Hero</th>
+                        <th class="text-center">Played</th>
+                        <th class="text-center">Win Rate</th>
+                        <th class="text-center">KDR</th>
+                        <th class="text-center">KDA</th>
+                        <th class="text-center">GPM</th>
+                        <th class="text-center">APM</th>
+                        <th class="text-center">XPM</th>
+                        <th class="text-center">Kill</th>
+                        <th class="text-center">Death</th>
+                        <th class="text-center">Assist</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="hero in ctrl.heroes | orderBy:'-games' track by $index">
+                        <td><img ng-src="//www.heroesofnewerth.com/images/heroes/{{ ::hero.hero_id }}/icon_128.jpg" width="30">{{ ::ctrl.heroData[hero.hero_id].disp_name }}</td>
+                        <td>{{ hero.games }}</td>
+                        <td>{{ hero.win / hero.games |numeraljs:'0%' }}</td>
+                        <td>{{ hero.kdr | number:2 }}</td>
+                        <td>{{ hero.kda | number:2 }}</td>
+                        <td>{{ hero.avgGPM | number:1 }}</td>
+                        <td>{{ hero.avgAPM | number:1 }}</td>
+                        <td>{{ hero.avgXPM | number:1 }}</td>
+                        <td>{{ hero.avgKills | number:1 }}</td>
+                        <td>{{ hero.avgDeaths | number:1 }}</td>
+                        <td>{{ hero.avgAssists | number:1 }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
