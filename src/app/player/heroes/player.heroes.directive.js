@@ -25,6 +25,8 @@ class PlayerHeroesCtrl {
         this.$scope = $scope;
         this.heroData = heroData;
 
+        this.durations = [{value: 0, label: 'Any'},{value: 600, label: '> 10 min'}, {value: 900, label: '> 15 min'},  {value: 1800, label: '> 30 min'},  {value: 2400, label: '> 40 min'}];
+
         this.activate(ApiService, $alert, $scope);
     }
     activate(ApiService, $alert, $scope) {
@@ -39,7 +41,7 @@ class PlayerHeroesCtrl {
         });
 
         let that = this;
-        $scope.$watchGroup(['selectedHero', 'selectedVersion'], function() {
+        $scope.$watchGroup(['selectedDuration', 'selectedVersion'], function() {
             if (that.issetup) {
                 that.filter();
             }
@@ -62,11 +64,16 @@ class PlayerHeroesCtrl {
                 }
             });
         }
+        if (this.$scope.selectedDuration && this.$scope.selectedDuration.length !== 0) {
+            let selectedDuration = this.$scope.selectedDuration;
+            temp = _.filter(temp, function(n) {
+                if (selectedDuration.value < n.length) {
+                    return n;
+                }
+            });
+        }
         this.filtered = temp;
         this.setup();
-    }
-    calculate(){
-        
     }
     setup() {
         let tempHeroes = [];

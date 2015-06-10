@@ -4,6 +4,9 @@
         <button type="button" placeholder="Versions" class="btn btn-default" ng-model="selectedVersion" data-multiple="true" data-sort="false" bs-options="version for version in ctrl.versions" bs-select>
             Action <span class="caret"></span>
         </button>
+        <button type="button" placeholder="Duration" class="btn btn-default" ng-model="selectedDuration" data-sort="false" bs-options="duration.label for duration in ctrl.durations" bs-select>
+            Action <span class="caret"></span>
+        </button>
     </div>
 </div>
 <br>
@@ -28,7 +31,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="hero in ctrl.heroes | orderBy:'-games' track by $index">
-                        <td><img ng-src="//www.heroesofnewerth.com/images/heroes/{{ ::hero.hero_id }}/icon_128.jpg" width="30">{{ ::ctrl.heroData[hero.hero_id].disp_name }}</td>
+                        <td class="text-muted"><img ng-src="//www.heroesofnewerth.com/images/heroes/{{ ::hero.hero_id }}/icon_128.jpg" width="30">{{ ::ctrl.heroData[hero.hero_id].disp_name }}</td>
                         <td>{{ hero.games }}</td>
                         <td>{{ hero.win / hero.games |numeraljs:'0%' }}</td>
                         <td>{{ hero.kdr | number:2 }}</td>
