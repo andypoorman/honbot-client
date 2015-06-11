@@ -10,11 +10,12 @@ import NavbarDirective from '../app/components/navbar/navbar.directive';
 import adsense from '../app/components/adsense/adsense.directive';
 import socket from '../app/components/socket/socket.factory';
 
-import PlayerHistoryDirective from './player/history/player.history.directive';
 import PlayerHeadDirective from './player/header/player.head.directive';
-import PlayerHeroesDirective from './player/heroes/player.heroes.directive';
+import PlayerHistoryDirective from './player/history/player.history.directive';
 import PlayerStatsDirective from './player/stats/player.stats.directive';
+import PlayerHeroesDirective from './player/heroes/player.heroes.directive';
 import PlayerMatchesDirective from './player/matches/player.matches.directive';
+import PlayerItemsDirective from './player/items/player.items.directive';
 import MatchCtrl from './match/match.controller';
 
 import BaseUrl from './services/baseurl';
@@ -56,4 +57,5 @@ angular.module('client', [
     .directive('hbPlayerStats', () => new PlayerStatsDirective())
     .directive('hbPlayerMatches', () => new PlayerMatchesDirective())
     .directive('hbPlayerHeroes', () => new PlayerHeroesDirective())
+    .directive('hbPlayerItems', () => new PlayerItemsDirective())
     .directive('hbNavbar', () => new NavbarDirective());

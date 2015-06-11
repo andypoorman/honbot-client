@@ -1,0 +1,50 @@
+<br>
+<div class="row">
+    <div class="col-xs-12">
+        <button type="button" placeholder="Versions" class="btn btn-default" ng-model="selectedVersion" data-multiple="true" data-sort="false" bs-options="version for version in ctrl.versions" bs-select>
+            Action <span class="caret"></span>
+        </button>
+        <button type="button" placeholder="Duration" class="btn btn-default" ng-model="selectedDuration" data-sort="false" bs-options="duration.label for duration in ctrl.durations" bs-select>
+            Action <span class="caret"></span>
+        </button>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="table-responsive">
+            <table id="match" class="table table-header table-striped table-condensed">
+                <thead>
+                    <tr>
+                        <th class="text-center">Item</th>
+                        <th class="text-center">Played</th>
+                        <th class="text-center">Win Rate</th>
+                        <th class="text-center">KDR</th>
+                        <th class="text-center">KDA</th>
+                        <th class="text-center">GPM</th>
+                        <th class="text-center">APM</th>
+                        <th class="text-center">XPM</th>
+                        <th class="text-center">Kill</th>
+                        <th class="text-center">Death</th>
+                        <th class="text-center">Assist</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in ctrl.items | orderBy:'-games' track by $index">
+                        <td class="text-muted"><img ng-src="assets/images/items/{{ item.item_id }}.jpg" width="30">{{ ::ctrl.heroData[item.hero_id].disp_name }}</td>
+                        <td>{{ item.games }}</td>
+                        <td>{{ item.win / item.games |numeraljs:'0%' }}</td>
+                        <td>{{ item.kdr | number:2 }}</td>
+                        <td>{{ item.kda | number:2 }}</td>
+                        <td>{{ item.avgGPM | number:1 }}</td>
+                        <td>{{ item.avgAPM | number:1 }}</td>
+                        <td>{{ item.avgXPM | number:1 }}</td>
+                        <td>{{ item.avgKills | number:1 }}</td>
+                        <td>{{ item.avgDeaths | number:1 }}</td>
+                        <td>{{ item.avgAssists | number:1 }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
