@@ -1,7 +1,7 @@
 server {
-    listen   80;
+    listen 80;
 
-    server_name www.honbot.com beta.honbot.com;
+    server_name www.honbot.com beta.honbot.com honbot.com;
     access_log /home/sc/honbot-client/clientaccess.log;
     error_log /home/sc/honbot-client/clienterror.log; 
     root /home/sc/honbot-client/dist/;
