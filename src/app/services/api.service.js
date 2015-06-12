@@ -80,7 +80,11 @@ class ApiService {
     }
     playerCache(pid, mode) {
         this.$analytics.eventTrack('api', {category: 'playerCache', label: pid});
-        return this.$http.get(`${this.host}/cache/${pid}/${mode}`);
+        return this.$http({
+            method: 'GET',
+            url:`${this.host}/cache/${pid}/${mode}`,
+            cache: true
+        });
     }
     saveMatches(data){
         var that = this;
