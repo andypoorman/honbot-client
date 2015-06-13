@@ -37,23 +37,27 @@ class HistoryCtrl {
         this.loading = true;
         this.historyPage += 1;
         this.ApiService.history(this.nickname, this.mode, this.historyPage).success(res => {
-            if (res.matches.length > 0) {
-                this.filterMatches(res.matches, res.account_id);
+            if (res.length > 0) {
+                this.filterMatches(res, this.nickname);
             }
-            if (res.matches.length < 25) {
+            if (res.length < 25) {
                 this.loading = false;
                 this.nomore = true;
             }
-            this.ApiService.saveMatches(res.matches);
+            this.ApiService.saveMatches(res);
         }).error(function() {
             this.nomore = true;
             this.loading = false;
         });
     }
-    filterMatches(matches, account_id) {
+    filterMatches(matches, nickname) {
         let history = this.history || [];
-        angular.forEach(matches, (n) => {
-            let temp = _.find(n.players, 'player_id', account_id);
+        _.forEach(matches, (n) => {
+            let temp = _.first(_.filter(n.players, function(obj){
+                if(nickname.toLowerCase() === obj.nickname.toLowerCase()){
+                    return n;
+                }
+            }));
             temp.date = n.date;
             history.push(temp);
         });
