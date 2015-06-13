@@ -26,7 +26,6 @@ class HistoryCtrl {
         this.mode = $routeParams.mode || 'rnk';
 
         this.historyPage = 0;
-        this.history = [];
 
         // trigger first load of player history
         this.more();
@@ -52,11 +51,13 @@ class HistoryCtrl {
         });
     }
     filterMatches(matches, account_id) {
+        let history = this.history || [];
         angular.forEach(matches, (n) => {
             let temp = _.find(n.players, 'player_id', account_id);
             temp.date = n.date;
-            this.history.push(temp);
+            history.push(temp);
         });
+        this.history = history;
         this.loading = false;
     }
 }
