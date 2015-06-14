@@ -53,11 +53,9 @@ class HistoryCtrl {
     filterMatches(matches, nickname) {
         let history = this.history || [];
         _.forEach(matches, (n) => {
-            let temp = _.first(_.filter(n.players, function(obj){
-                if(nickname.toLowerCase() === obj.nickname.toLowerCase()){
-                    return n;
-                }
-            }));
+            let temp = _.find(n.players, function(n){
+                return n.nickname && nickname.toLowerCase() === n.nickname.toLowerCase();
+            });
             temp.date = n.date;
             history.push(temp);
         });
