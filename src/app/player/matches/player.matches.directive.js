@@ -56,9 +56,13 @@ class PlayerMatchesCtrl {
             temp.version = obj.version;
             temp.match_id = obj.id;
             that.pulled.push(temp);
+            let hero = 'unknown';
+            if(temp.hero_id !== 0){
+                hero = that.heroData[temp.hero_id].disp_name;
+            }
             tempheroes.push({
                 value: temp.hero_id,
-                label: that.heroData[temp.hero_id].disp_name
+                label: hero
             });
             tempversions.push(obj.version);
         });

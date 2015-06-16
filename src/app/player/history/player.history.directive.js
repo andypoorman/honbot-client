@@ -56,8 +56,10 @@ class HistoryCtrl {
             let temp = _.find(n.players, function(n){
                 return n.nickname && nickname.toLowerCase() === n.nickname.toLowerCase();
             });
-            temp.date = n.date;
-            history.push(temp);
+            if(temp){
+                temp.date = n.date;
+                history.push(temp);
+            }
         });
         this.history = history;
         this.loading = false;
