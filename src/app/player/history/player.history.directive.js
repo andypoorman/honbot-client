@@ -54,10 +54,10 @@ class HistoryCtrl {
         nickname = nickname.toLowerCase();
         let history = this.history || [];
         _.forEach(matches, (n) => {
-            let temp = _.find(n.players, function(n){
+            let temp = _.find(n.players, function(n) {
                 return n.nickname && nickname === n.nickname.toLowerCase();
             });
-            if(temp){
+            if (temp) {
                 temp.date = n.date;
                 history.push(temp);
             }
