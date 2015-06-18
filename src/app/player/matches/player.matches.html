@@ -2,10 +2,8 @@
 <div class="row">
     <div class="col-xs-12">
         <button type="button" placeholder="Heroes" class="btn btn-default" ng-model="selectedHero" data-multiple="true" data-sort="false" bs-options="hero.value as hero.label for hero in ctrl.heroes" bs-select>
-            Action <span class="caret"></span>
         </button>
         <button type="button" placeholder="Versions" class="btn btn-default" ng-model="selectedVersion" data-multiple="true" data-sort="false" bs-options="version for version in ctrl.versions" bs-select>
-            Action <span class="caret"></span>
         </button>
     </div>
 </div>
@@ -107,7 +105,7 @@
                         <td>{{ ::match.mmr_change | number:1 }}</td>
                         <td am-time-ago="match.date"></td>
                         <td style="text-align:left">
-                            <a ng-repeat="item in match.items track by $index" href="/item/{{ ::item }}/" ng-if="item">
+                            <a ng-repeat="item in match.items |filter:'!!' track by $index">
                                 <img ng-src="assets/images/items/{{ ::item }}.jpg" width="30">
                             </a>
                         </td>

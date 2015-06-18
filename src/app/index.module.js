@@ -16,7 +16,7 @@ import PlayerStatsDirective from './player/stats/player.stats.directive';
 import PlayerHeroesDirective from './player/heroes/player.heroes.directive';
 import PlayerMatchesDirective from './player/matches/player.matches.directive';
 import PlayerItemsDirective from './player/items/player.items.directive';
-import MatchCtrl from './match/match.controller';
+import MatchDirective from './match/match.directive';
 
 import BaseUrl from './services/baseurl';
 import ApiService from './services/api.service';
@@ -46,7 +46,6 @@ angular.module('client', [
     // .run(runBlock)
 
     .controller('HomeCtrl', HomeCtrl)
-    .controller('MatchCtrl', MatchCtrl)
     .factory('socket', socket)
     .service('BaseUrl', BaseUrl)
     .service('ApiService', ApiService)
@@ -58,4 +57,5 @@ angular.module('client', [
     .directive('hbPlayerMatches', () => new PlayerMatchesDirective())
     .directive('hbPlayerHeroes', () => new PlayerHeroesDirective())
     .directive('hbPlayerItems', () => new PlayerItemsDirective())
+    .directive('hbMatch', () => new MatchDirective())
     .directive('hbNavbar', () => new NavbarDirective());

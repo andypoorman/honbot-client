@@ -23,16 +23,15 @@ class PlayerMatchesCtrl {
         this.nickname = $routeParams.player;
         this.$location = $location;
         this.$scope = $scope;
-        this.heroData = heroData;
 
-        this.activate(ApiService, $alert, $scope);
+        this.activate(ApiService, $alert, $scope, heroData);
     }
-    activate(ApiService, $alert, $scope) {
+    activate(ApiService, $alert, $scope, heroData) {
         ApiService.singlePlayer(this.nickname).success(player => {
             this.player = player;
             ApiService.playerCache(player.account_id, this.m).success(res => {
                 this.all = res;
-                this.setup();
+                this.setup(heroData);
                 this.issetup = true;
             });
         });
@@ -44,73 +43,72 @@ class PlayerMatchesCtrl {
             }
         });
     }
-    setup() {
-        var that = this;
-        this.pulled = [];
-        let tempheroes = [];
-        let tempversions = [];
+    setup(heroData) {
+        let that = this;
+        let pulled = [];
+        let heroes = {};
+        let versions = {};
+        let allItems = {};
         _.forEach(this.all, function(obj) {
             let temp = _.find(obj.players, 'player_id', that.player.account_id);
-            temp.date = moment(obj.date);
-            temp.length = obj.length;
-            temp.version = obj.version;
-            temp.match_id = obj.id;
-            that.pulled.push(temp);
-            let hero = 'unknown';
-            if(temp.hero_id !== 0){
-                hero = that.heroData[temp.hero_id].disp_name;
+            if (temp) {
+                temp.date = moment(obj.date).toDate();
+                temp.length = obj.length;
+                temp.version = obj.version;
+                temp.match_id = obj.id;
+                pulled.push(temp);
+
+                // collect all used heroes
+                heroes[temp.hero_id] = {
+                    value: temp.hero_id,
+                    label: heroData[temp.hero_id].disp_name
+                };
+                versions[obj.version] = true;
             }
-            tempheroes.push({
-                value: temp.hero_id,
-                label: hero
-            });
-            tempversions.push(obj.version);
         });
+        this.pulled = pulled;
         this.filter();
-        this.heroes = _.chain(tempheroes).uniq('value').sortBy('label').value();
-        this.versions = _.chain(tempversions).uniq().value();
+        this.heroes = _.sortBy(_.values(heroes), 'label');
+        this.versions = _.values(versions);
+        this.allItems = _.values(allItems);
     }
     filter() {
-        let temp = this.pulled;
-        if (this.$scope.selectedHero && this.$scope.selectedHero.length !== 0) {
-            let selectedHero = this.$scope.selectedHero;
-            temp = _.filter(temp, function(n) {
-                if (_.includes(selectedHero, n.hero_id)) {
-                    return n;
-                }
-            });
-        }
-        if (this.$scope.selectedVersion && this.$scope.selectedVersion.length !== 0) {
-            let selectedVersion = this.$scope.selectedVersion;
-            temp = _.filter(temp, function(n) {
-                if (_.includes(selectedVersion, n.version)) {
-                    return n;
-                }
-            });
-        }
-        this.filtered = temp;
-        this.totals();
-    }
-    totals() {
-        let totals = {};
-        _.forEach(this.filtered, function(n) {
-            _.forIn(n, function(j, key) {
-                if (!totals[key]) {
-                    totals[key] = Number(j);
-                } else {
-                    totals[key] += Number(j);
-                }
-            });
-        });
-        let averages = {};
-        let matches = this.filtered.length;
-        _.forIn(totals, function(val, key) {
-            if (angular.isNumber(val)) {
-                averages[key] = val / matches;
+        let that = this;
+        this.filtered = _.filter(this.pulled, function(n) {
+            if (that.filterHero(n.hero_id) && that.filterVersion(n.version)) {
+                return n;
             }
         });
-        this.averages = averages;
-        this.averages.length = moment.duration((totals.length / matches), 'seconds').format();
+        this.totals();
+    }
+    filterVersion(version) {
+        if (this.$scope.selectedVersion && this.$scope.selectedVersion.length > 0 && !_.includes(this.$scope.selectedVersion, version)) {
+            return false;
+        }
+        return true;
+    }
+    filterHero(hero_id) {
+        if (this.$scope.selectedHero && this.$scope.selectedHero.length > 0 && !_.includes(this.$scope.selectedHero, hero_id)) {
+            return false;
+        }
+        return true;
+    }
+    totals() {
+        let needed = ['length', 'kills', 'deaths', 'assists', 'cs', 'denies', 'gpm', 'xpm', 'apm', 'wards', 'herodmg', 'bdmg'];
+        let that = this;
+        that.averages = {};
+        _.forEach(needed, function(j) {
+            that.averages[j] = 0;
+        });
+        _.forEach(this.filtered, function(n) {
+            _.forEach(needed, function(j) {
+                that.averages[j] += n[j];
+            });
+        });
+        _.forEach(needed, function(j) {
+            that.averages[j] = that.averages[j] / that.filtered.length;
+        });
+        this.averages.length = moment.duration(this.averages.length, 'seconds').format();
     }
     goMatch(match) {
         this.$location.path(`/match/${match}`);

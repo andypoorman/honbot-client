@@ -1,3 +1,20 @@
+class MatchDirective {
+    constructor() {
+        'ngInject';
+
+        let directive = {
+            restrict: 'E',
+            templateUrl: 'app/match/match.html',
+            scope: {},
+            controller: MatchCtrl,
+            controllerAs: 'ctrl',
+            bindToController: true
+        };
+
+        return directive;
+    }
+}
+
 class MatchCtrl {
     constructor($routeParams, ApiService, heroData, $scope, $alert, itemList) {
         'ngInject';
@@ -36,7 +53,6 @@ class MatchCtrl {
     }
     activate($scope, $alert, ApiService) {
         let vm = this;
-
         ApiService.match(this.matchid, function(res) {
             vm.match = res;
             vm.duration = moment.duration(res.length, 'seconds').format();
@@ -66,8 +82,8 @@ class MatchCtrl {
         });
 
         $scope.$watch('selectedGraph', function(newval, oldval) {
-            if (newval !== oldval && vm.match) {
-                vm.regraph();
+            if (newval !== oldval && this.match) {
+                this.regraph();
             }
         });
 
@@ -91,7 +107,7 @@ class MatchCtrl {
     }
     teamtotals() {
         let vm = this;
-        _.forEach(vm.match.players, function(n) {
+        _.forEach(this.match.players, function(n) {
             _.forEach(n, function(j, key) {
                 if (!vm[`team${n.team}`][key]) {
                     vm[`team${n.team}`][key] = Number(j);
@@ -103,4 +119,4 @@ class MatchCtrl {
     }
 }
 
-export default MatchCtrl;
+export default MatchDirective;

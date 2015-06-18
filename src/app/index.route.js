@@ -19,9 +19,7 @@ function routerConfig($routeProvider) {
             templateUrl: 'app/player/views/player.items.html',
         })
         .when('/match/:match/', {
-            templateUrl: 'app/match/match.html',
-            controller: 'MatchCtrl',
-            controllerAs: 'ctrl'
+            templateUrl: 'app/match/match.view.html',
         })
         .otherwise({
             redirectTo: '/'
