@@ -14,6 +14,7 @@ class ApiService {
         this.updateWatching = false;
     }
     apiCalls(callback) {
+        // keeps count of api calls to 
         if(!this.apiWatching){
             this.socket.on('api', function(data) {
                 callback(data);
@@ -56,7 +57,8 @@ class ApiService {
         });
     }
     bulkPlayers(pids){
-            this.$analytics.eventTrack('api', {category: 'players', label: 'bulk'});
+        // takes list of playerid's and returns cached stats for each player
+        this.$analytics.eventTrack('api', {category: 'players', label: 'bulk'});
         return this.$http.get(`${this.host}/bulkPlayers/${pids}`);
     }
     history(pid, mode, page) {
