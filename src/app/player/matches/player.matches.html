@@ -96,7 +96,7 @@
                         <td>{{ ::match.kills }}</td>
                         <td>{{ ::match.deaths }}</td>
                         <td>{{ ::match.assists }}</td>
-                        <td>{{ ::match.kdr | number:2 }}</td>
+                        <td>{{ ::match.kdr || match.kills | number:2 }}</td>
                         <td>{{ ::match.gpm | number:0 }}</td>
                         <td>{{ ::match.xpm | number:0 }}</td>
                         <td>{{ ::match.apm | number:0 }}</td>

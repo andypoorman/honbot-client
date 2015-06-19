@@ -48,7 +48,6 @@ class PlayerMatchesCtrl {
         let pulled = [];
         let heroes = {};
         let versions = {};
-        let allItems = {};
         _.forEach(this.all, function(obj) {
             let temp = _.find(obj.players, 'player_id', that.player.account_id);
             if (temp) {
@@ -69,8 +68,7 @@ class PlayerMatchesCtrl {
         this.pulled = pulled;
         this.filter();
         this.heroes = _.sortBy(_.values(heroes), 'label');
-        this.versions = _.values(versions);
-        this.allItems = _.values(allItems);
+        this.versions = _.keys(versions);
     }
     filter() {
         let that = this;

@@ -100,7 +100,7 @@
                         <td>{{ ::player.kills }}</td>
                         <td>{{ ::player.deaths }}</td>
                         <td>{{ ::player.assists }}</td>
-                        <td>{{ ::player.kdr | number:1 }}</td>
+                        <td>{{ ::player.kdr || player.kills | number:1 }}</td>
                         <td>{{ ::player.cs }}</td>
                         <td>{{ ::player.denies }}</td>
                         <td>{{ ::player.gpm | number:0 }}</td>
