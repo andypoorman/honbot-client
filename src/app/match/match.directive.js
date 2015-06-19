@@ -82,8 +82,8 @@ class MatchCtrl {
         });
 
         $scope.$watch('selectedGraph', function(newval, oldval) {
-            if (newval !== oldval && this.match) {
-                this.regraph();
+            if (newval !== oldval && vm.match) {
+                vm.regraph();
             }
         });
 
