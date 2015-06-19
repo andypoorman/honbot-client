@@ -42,7 +42,6 @@ angular.module('client', [
 
     .config(config)
     .config(routerConfig)
-    // runblock not currently used but could be useful
     // .run(runBlock)
 
     .controller('HomeCtrl', HomeCtrl)
