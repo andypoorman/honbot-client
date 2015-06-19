@@ -102,7 +102,7 @@ class PlayerMatchesCtrl {
         });
         _.forEach(this.filtered, function(n) {
             _.forEach(needed, function(j) {
-                that.averages[j] += n[j];
+                that.averages[j] += Number(n[j]);
             });
         });
         _.forEach(needed, function(j) {
