@@ -95,12 +95,9 @@ class PlayerMatchesCtrl {
         let needed = ['length', 'kills', 'deaths', 'assists', 'cs', 'denies', 'gpm', 'xpm', 'apm', 'wards', 'herodmg', 'bdmg'];
         let that = this;
         that.averages = {};
-        _.forEach(needed, function(j) {
-            that.averages[j] = 0;
-        });
         _.forEach(this.filtered, function(n) {
             _.forEach(needed, function(j) {
-                that.averages[j] += Number(n[j]);
+                that.averages[j] = (that.averages[j] || 0) + Number(n[j]);
             });
         });
         _.forEach(needed, function(j) {
