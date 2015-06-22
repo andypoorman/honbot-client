@@ -1,3 +1,9 @@
 User-agent: *
 Disallow: /match/
+Disallow: /player/*/matches/
+Disallow: /player/*/heroes/
+Disallow: /player/*/items/
 Crawl-delay: 5
+
+User-agent: Mediapartners-Google
+Allow: /
