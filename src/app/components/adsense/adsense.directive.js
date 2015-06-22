@@ -19,7 +19,7 @@ class adsense {
             vm.$timeout(function() {
                 let adsbygoogle = window.adsbygoogle || [];
                 adsbygoogle.push({});
-            }, 10, false);
+            }, 100, false);
         }
     }
 }
