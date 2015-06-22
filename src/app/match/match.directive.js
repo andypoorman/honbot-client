@@ -38,14 +38,16 @@ class MatchCtrl {
             {value: 'deaths', label: 'Deaths'},
             {value: 'assists', label: 'Assists'},
             {value: 'cs', label: 'CS'},
+            {value: 'denies', label: 'CD'},
             {value: 'gpm', label: 'GPM'},
             {value: 'apm', label: 'APM'},
             {value: 'xpm', label: 'XPM'},
             {value: 'wards', label: 'Wards'},
             {value: 'herodmg', label: 'Hero Damage'},
             {value: 'bdmg', label: 'Kills'},
+            {value: 'level', label: 'Level'},
         ];
-        $scope.selectedGraph = this.options[4];
+        $scope.selectedGraph = this.options[5];
 
 
         this.activate($scope, $alert, ApiService);
@@ -68,8 +70,8 @@ class MatchCtrl {
             }
 
             vm.match.players = _.sortBy(vm.match.players, 'position');
-            vm.regraph();
             vm.teamtotals();
+            vm.regraph();
         }, function() {
             $alert({
                 title: 'ERROR:',
@@ -89,17 +91,18 @@ class MatchCtrl {
 
     }
     regraph() {
+        // players graph
         let options = {
-            title: this.$scope.selectedGraph.label,
+            title: '',
             data: this.match.players,
             chart_type: 'bar',
             x_accessor: 'nickname',
             y_accessor: this.$scope.selectedGraph.value,
             full_width: true,
-            height: 350,
+            height: 400,
             left: 30,
             top: 10,
-            right: 0,
+            right: 5,
             target: '#graph',
             bar_orientation: 'vertical',
         };
@@ -107,13 +110,10 @@ class MatchCtrl {
     }
     teamtotals() {
         let vm = this;
+        vm.teamtotal = [{teamname: 'Legion'}, {teamname: 'Hellborne'}];
         _.forEach(this.match.players, function(n) {
-            _.forEach(n, function(j, key) {
-                if (!vm[`team${n.team}`][key]) {
-                    vm[`team${n.team}`][key] = Number(j);
-                } else {
-                    vm[`team${n.team}`][key] += Number(j);
-                }
+            _.forEach(vm.options, function(j) {
+                vm.teamtotal[n.team-1][j.value] = (vm.teamtotal[n.team-1][j.value] || 0) + Number(n[j.value]);
             });
         });
     }

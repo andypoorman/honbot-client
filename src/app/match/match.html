@@ -13,7 +13,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-md-7">
             <div class="row text-center">
                 <div class="col-xs-3">
@@ -37,7 +36,11 @@
                 </div>
             </div>
         </div>
-
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <adsense></adsense>
+        </div>
     </div>
     <div class="row">
         <div class="col-xs-12 table-responsive">
@@ -113,19 +116,19 @@
                     <tr>
                         <td>Total</td>
                         <td></td>
-                        <td>{{ ::ctrl['team'+t].level }}</td>
-                        <td>{{ ::ctrl['team'+t].kills }}</td>
-                        <td>{{ ::ctrl['team'+t].deaths }}</td>
-                        <td>{{ ::ctrl['team'+t].assists }}</td>
+                        <td>{{ ::ctrl.teamtotal[t-1].level }}</td>
+                        <td>{{ ::ctrl.teamtotal[t-1].kills }}</td>
+                        <td>{{ ::ctrl.teamtotal[t-1].deaths }}</td>
+                        <td>{{ ::ctrl.teamtotal[t-1].assists }}</td>
                         <td>-</td>
-                        <td>{{ ::ctrl['team'+t].cs }}</td>
-                        <td>{{ ::ctrl['team'+t].denies }}</td>
-                        <td>{{ ::ctrl['team'+t].gpm | numeraljs:'0.0a' }}</td>
-                        <td>{{ ::ctrl['team'+t].xpm | numeraljs:'0.0a' }}</td>
-                        <td>{{ ::ctrl['team'+t].apm | number:0 }}</td>
-                        <td>{{ ::ctrl['team'+t].wards }}</td>
-                        <td>{{ ::ctrl['team'+t].herodmg | numeraljs:'0.0a' }}</td>
-                        <td>{{ ::ctrl['team'+t].bdmg | numeraljs:'0.0a' }}</td>
+                        <td>{{ ::ctrl.teamtotal[t-1].cs }}</td>
+                        <td>{{ ::ctrl.teamtotal[t-1].denies }}</td>
+                        <td>{{ ::ctrl.teamtotal[t-1].gpm | numeraljs:'0.0a' }}</td>
+                        <td>{{ ::ctrl.teamtotal[t-1].xpm | numeraljs:'0.0a' }}</td>
+                        <td>{{ ::ctrl.teamtotal[t-1].apm | number:0 }}</td>
+                        <td>{{ ::ctrl.teamtotal[t-1].wards }}</td>
+                        <td>{{ ::ctrl.teamtotal[t-1].herodmg | numeraljs:'0.0a' }}</td>
+                        <td>{{ ::ctrl.teamtotal[t-1].bdmg | numeraljs:'0.0a' }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -137,16 +140,38 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 col-md-offset-3 text-center">
+        <div class="col-md-6 text-center players">
             Change Graph:
             <button 
                 type="button"
-                class="btn btn-default"
+                class="btn btn-info"
                 ng-model="selectedGraph"
                 bs-options="option.label for option in ctrl.options"
                 bs-select>Target
             </button>
             <div id="graph"></div>
+        </div>
+        <div class="col-md-6 text-center teams">
+            <div class="row">
+                <div class="col-md-4 col-xs-6">
+                    <div hb-team-graph id="gpm" title="GPM" teamtotal="::ctrl.teamtotal"></div>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                    <div hb-team-graph id="apm" title="APM" teamtotal="::ctrl.teamtotal"></div>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                    <div hb-team-graph id="xpm" title="XPM" teamtotal="::ctrl.teamtotal"></div>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                    <div hb-team-graph id="kills" title="KILLS" teamtotal="::ctrl.teamtotal"></div>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                    <div hb-team-graph id="herodmg" title="HERO DMG" teamtotal="::ctrl.teamtotal"></div>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                    <div hb-team-graph id="cs" title="CS" teamtotal="::ctrl.teamtotal"></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">

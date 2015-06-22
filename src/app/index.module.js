@@ -18,6 +18,7 @@ import PlayerHeroesDirective from './player/heroes/player.heroes.directive';
 import PlayerMatchesDirective from './player/matches/player.matches.directive';
 import PlayerItemsDirective from './player/items/player.items.directive';
 import MatchDirective from './match/match.directive';
+import TeamGraph from './match/team.graph.directive';
 
 import BaseUrl from './services/baseurl';
 import ApiService from './services/api.service';
@@ -59,4 +60,5 @@ angular.module('client', [
     .directive('hbPlayerHeroes', () => new PlayerHeroesDirective())
     .directive('hbPlayerItems', () => new PlayerItemsDirective())
     .directive('hbMatch', () => new MatchDirective())
+    .directive('hbTeamGraph', () => new TeamGraph())
     .directive('hbNavbar', () => new NavbarDirective());
