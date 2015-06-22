@@ -16,6 +16,7 @@ html {
 $footer-size: 90px;
 
 body {
+
     /* Margin bottom by footer height */
     margin-bottom: $footer-size;
     padding-bottom: 40px;
@@ -47,17 +48,17 @@ body {
     }
 }
 // player colors
-$player-1: #002c9f;
-$player-2: #00c19e;
-$player-3: #770092;
-$player-4: #f2d500;
-$player-5: #ff7d29;
-$player-6: #ff44ab;
-$player-7: #727272;
-$player-8: #00a0da;
-$player-9: #006448;
-$player-10: #562507;
-$gold: rgb(255,167,0);
+$player-1:#002c9f;
+$player-2:#00c19e;
+$player-3:#770092;
+$player-4:#f2d500;
+$player-5:#ff7d29;
+$player-6:#ff44ab;
+$player-7:#727272;
+$player-8:#00a0da;
+$player-9:#006448;
+$player-10:#562507;
+$gold: rgb(255, 167, 0);
 
 .text-gold {
     color: $gold;
@@ -88,6 +89,7 @@ $gold: rgb(255,167,0);
 .matchloss {
     background-color: rgba(255, 92, 92, .15);
     border-left: 1px solid $brand-danger;
+
     &:hover {
         background-color: rgba(255, 92, 92, .25);
     }
@@ -95,6 +97,7 @@ $gold: rgb(255,167,0);
 .matchwin {
     background-color: rgba(0, 193, 158, .15);
     border-left: 1px solid $brand-success;
+
     &:hover {
         background-color: rgba(0, 193, 158, .25);
     }
@@ -104,6 +107,7 @@ $gold: rgb(255,167,0);
         padding: 2px;
         vertical-align: middle;
         text-align: right;
+
         &:first-child, &:nth-child(2) {
             text-align: left;
         }
@@ -115,19 +119,20 @@ $gold: rgb(255,167,0);
     -moz-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0px 1px 0 0 rgba(0, 0, 0, 0.1);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0px 1px 0 0 rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
+
     input[type=text]:focus, textarea:focus {
-      border-color: rgba(255, 255, 255, .6);
+        border-color: rgba(255, 255, 255, .6);
     }
     .navbar-form {
-      margin-left: 0px;
-      margin-right: 0px;
-      padding: 0px 0px;
-      border-top: 0px solid transparent;
-      border-bottom: 0px solid transparent;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0px 0px;
+        border-top: 0px solid transparent;
+        border-bottom: 0px solid transparent;
     }
 }
 .btn-group {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 .player-0 {
     border-left: 1px solid;
@@ -183,269 +188,237 @@ $gold: rgb(255,167,0);
     cursor: pointer;
     color: lighten($gold, 20%);
 }
-
-
-
 // this needs to be cleaned
 
 .mg-active-datapoint {
     fill: #fff;
 }
-
 .mg-area1-color {
     fill: #ffd300;
 }
-
 .mg-area2-color {
     fill: #18ff00;
 }
-
 .mg-area3-color {
     fill: #f57070;
 }
-
 .mg-area4-color {
     fill: #f8b128;
 }
-
 .mg-area5-color {
     fill: #f7f7f7;
 }
-
 .mg-barplot .mg-bar-prediction {
     fill: #5b5b5b;
 }
-
 .mg-barplot .mg-bar-baseline {
     stroke: #5b5b5b;
 }
-
 .mg-baselines line {
     stroke: #676767;
 }
-
 .mg-baselines text {
     fill: #fff;
 }
-
-.mg-histogram .axis path,
-.mg-histogram .axis line {
+.mg-histogram .axis path, .mg-histogram .axis line {
     opacity: 0.5;
     stroke: #ccc;
 }
-
 // yello ones
-.mg-histogram .mg-bar rect,
-.mg-barplot rect.mg-bar {
+.mg-histogram .mg-bar rect, .mg-barplot rect.mg-bar {
     fill: #d8b307;
 }
-
-.mg-histogram .mg-bar rect.active,
-.mg-barplot rect.mg-bar.active {
+.mg-histogram .mg-bar rect.active, .mg-barplot rect.mg-bar.active {
     fill: #b3960f;
 }
-
-.mg-barplot > rect:nth-child(1) {
-    fill: $player-1;
+.players {
+    .mg-barplot > rect:nth-child(1) {
+        fill: $player-1;
+    }
+    .mg-barplot > rect.mg-bar.active:nth-child(1) {
+        fill: lighten($player-1, 10%);
+    }
+    .mg-barplot > rect:nth-child(2) {
+        fill: $player-2;
+    }
+    .mg-barplot > rect.mg-bar.active:nth-child(2) {
+        fill: lighten($player-2, 10%);
+    }
+    .mg-barplot > rect:nth-child(3) {
+        fill: $player-3;
+    }
+    .mg-barplot > rect.mg-bar.active:nth-child(3) {
+        fill: lighten($player-3, 10%);
+    }
+    .mg-barplot > rect:nth-child(4) {
+        fill: $player-4;
+    }
+    .mg-barplot > rect.mg-bar.active:nth-child(4) {
+        fill: lighten($player-4, 10%);
+    }
+    .mg-barplot > rect:nth-child(5) {
+        fill: $player-5;
+    }
+    .mg-barplot > rect.mg-bar.active:nth-child(5) {
+        fill: lighten($player-5, 10%);
+    }
+    .mg-barplot > rect:nth-child(6) {
+        fill: $player-6;
+    }
+    .mg-barplot > rect.mg-bar.active:nth-child(6) {
+        fill: lighten($player-6, 10%);
+    }
+    .mg-barplot > rect:nth-child(7) {
+        fill: $player-7;
+    }
+    .mg-barplot > rect.mg-bar.active:nth-child(7) {
+        fill: lighten($player-7, 10%);
+    }
+    .mg-barplot > rect:nth-child(8) {
+        fill: $player-8;
+    }
+    .mg-barplot > rect.mg-bar.active:nth-child(8) {
+        fill: lighten($player-8, 10%);
+    }
+    .mg-barplot > rect:nth-child(9) {
+        fill: $player-9;
+    }
+    .mg-barplot > rect.mg-bar.active:nth-child(9) {
+        fill: lighten($player-9, 10%);
+    }
+    .mg-barplot > rect:nth-child(10) {
+        fill: $player-10;
+    }
+    .mg-barplot > rect.mg-bar.active:nth-child(10) {
+        fill: lighten($player-10, 10%);
+    }
 }
-.mg-barplot > rect.mg-bar.active:nth-child(1) {
-    fill: lighten($player-1, 10%);
+.teams {
+    .mg-barplot > rect:nth-child(1) {
+        fill: $brand-success;
+    }
+    .mg-barplot > rect.mg-bar.active:nth-child(1) {
+        fill: lighten($brand-success, 10%);
+    }
+    .mg-barplot > rect:nth-child(2) {
+        fill: $brand-danger;
+    }
+    .mg-barplot > rect.mg-bar.active:nth-child(2) {
+        fill: lighten($brand-danger, 10%);
+    }
 }
-.mg-barplot > rect:nth-child(2) {
-    fill: $player-2;
-}
-.mg-barplot > rect.mg-bar.active:nth-child(2) {
-    fill: lighten($player-2, 10%);
-}
-.mg-barplot > rect:nth-child(3) {
-    fill: $player-3;
-}
-.mg-barplot > rect.mg-bar.active:nth-child(3) {
-    fill: lighten($player-3, 10%);
-}
-.mg-barplot > rect:nth-child(4) {
-    fill: $player-4;
-}
-.mg-barplot > rect.mg-bar.active:nth-child(4) {
-    fill: lighten($player-4, 10%);
-}
-.mg-barplot > rect:nth-child(5) {
-    fill: $player-5;
-}
-.mg-barplot > rect.mg-bar.active:nth-child(5) {
-    fill: lighten($player-5, 10%);
-}
-.mg-barplot > rect:nth-child(6) {
-    fill: $player-6;
-}
-.mg-barplot > rect.mg-bar.active:nth-child(6) {
-    fill: lighten($player-6, 10%);
-}
-.mg-barplot > rect:nth-child(7) {
-    fill: $player-7;
-}
-.mg-barplot > rect.mg-bar.active:nth-child(7) {
-    fill: lighten($player-7, 10%);
-}
-.mg-barplot > rect:nth-child(8) {
-    fill: $player-8;
-}
-.mg-barplot > rect.mg-bar.active:nth-child(8) {
-    fill: lighten($player-8, 10%);
-}
-.mg-barplot > rect:nth-child(9) {
-    fill: $player-9;
-}
-.mg-barplot > rect.mg-bar.active:nth-child(9) {
-    fill: lighten($player-9, 10%);
-}
-.mg-barplot > rect:nth-child(10) {
-    fill: $player-10;
-}
-.mg-barplot > rect.mg-bar.active:nth-child(10) {
-    fill: lighten($player-10, 10%);
-}
-
-
 .mg-histogram .mg-bar text {
     fill: #fff;
 }
-
 .mg-histogram .axis .tick line {
     opacity: 0.3;
 }
-
 .mg-least-squares-line {
     stroke: #f57070;
 }
-
 .mg-line1-color {
     stroke: #ffd300;
 }
-
 .mg-hover-line1-color {
     stroke: #ffd300;
 }
-
 .mg-line2-color {
     stroke: #18ff00;
 }
-
 .mg-hover-line2-color {
     stroke: #18ff00;
 }
-
 .mg-line3-color {
     stroke: #f57070;
 }
-
 .mg-hover-line3-color {
     stroke: #f57070;
 }
-
 .mg-line4-color {
     stroke: #f8b128;
 }
-
 .mg-hover-line4-color {
     stroke: #f8b128;
 }
-
 .mg-line5-color {
     stroke: #f7f7f7;
 }
-
 .mg-hover-line5-color {
     stroke: #f7f7f7;
 }
-
 .mg-line1-legend-color {
     color: #ffd300;
 }
-
 .mg-line2-legend-color {
     color: #18ff00;
 }
-
 .mg-line3-legend-color {
     color: #f57070;
 }
-
 .mg-line4-legend-color {
     color: #f8b128;
 }
-
 .mg-line5-legend-color {
     color: #f7f7f7;
 }
-
 .mg-main-area-solid svg .mg-main-area {
     fill: #52491f;
 }
-
 .mg-markers line {
     stroke: #676767;
 }
-
 .mg-markers text {
     fill: #fff;
 }
-
-.mg-x-rug-mono,
-.mg-y-rug-mono {
+.mg-x-rug-mono, .mg-y-rug-mono {
     stroke: #cfcfcf;
 }
-
-.mg-x-axis line,
-.mg-y-axis line {
+.mg-x-axis line, .mg-y-axis line {
     stroke: #676767;
 }
-
-.mg-x-axis text,
-.mg-y-axis text,
-.mg-histogram .axis text {
+.mg-x-axis text, .mg-y-axis text, .mg-histogram .axis text {
     fill: #fff;
 }
-
 .mg-year-marker text {
     fill: #fff;
 }
-
 .mg-year-marker line {
     stroke: #676767;
 }
-
-
 // SPINNER
 .spinner {
-  width: 30px;
-  height: 30px;
-  background-color: #777;
-
-  margin: 17px auto;
-  -webkit-animation: rotateplane 1.2s infinite ease-in-out;
-  animation: rotateplane 1.2s infinite ease-in-out;
+    width: 30px;
+    height: 30px;
+    background-color: #777;
+    margin: 17px auto;
+    -webkit-animation: rotateplane 1.2s infinite ease-in-out;
+    animation: rotateplane 1.2s infinite ease-in-out;
 }
-
 @-webkit-keyframes rotateplane {
-  0% { -webkit-transform: perspective(120px) }
-  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+    0% {
+        -webkit-transform: perspective(120px)
+    }
+    50% {
+        -webkit-transform: perspective(120px) rotateY(180deg)
+    }
+    100% {
+        -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg)
+    }
 }
-
 @keyframes rotateplane {
-  0% { 
-    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
-  } 50% { 
-    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
-  } 100% { 
-    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-  }
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+    }
+    50% {
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+    }
+    100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
 }
-
 
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
