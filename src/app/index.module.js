@@ -6,6 +6,7 @@ import routerConfig from './index.route';
 // import runBlock from './index.run';
 
 import HomeCtrl from './home/home.controller';
+import ItemCtrl from './item/item.controller';
 import NavbarDirective from '../app/components/navbar/navbar.directive';
 import adsense from '../app/components/adsense/adsense.directive';
 import socket from '../app/components/socket/socket.factory';
@@ -45,6 +46,7 @@ angular.module('client', [
     // .run(runBlock)
 
     .controller('HomeCtrl', HomeCtrl)
+    .controller('ItemCtrl', ItemCtrl)
     .factory('socket', socket)
     .service('BaseUrl', BaseUrl)
     .service('ApiService', ApiService)
