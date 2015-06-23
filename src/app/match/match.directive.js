@@ -54,25 +54,24 @@ class MatchCtrl {
 
     }
     activate($scope, $alert, ApiService) {
-        let vm = this;
-        ApiService.match(this.matchid, function(res) {
-            vm.match = res;
-            vm.duration = moment.duration(res.length, 'seconds').format();
-            vm.m = vm.modes[res.mode];
+        ApiService.match(this.matchid, res => {
+            this.match = res;
+            this.duration = moment.duration(res.length, 'seconds').format();
+            this.m = this.modes[res.mode];
 
             if (res.players) {
                 var pids = _.pluck(res.players, 'player_id').join(',');
                 ApiService.bulkPlayers(pids).success(res => {
                     _.forEach(res, (n) => {
-                        vm.ptips[n.account_id] = n;
+                        this.ptips[n.account_id] = n;
                     });
                 });
             }
 
-            vm.match.players = _.sortBy(vm.match.players, 'position');
-            vm.teamtotals();
-            vm.regraph();
-        }, function() {
+            this.match.players = _.sortBy(this.match.players, 'position');
+            this.teamtotals();
+            this.regraph();
+        }, () => {
             $alert({
                 title: 'ERROR:',
                 content: 'Match not available. Try again maybe later.',
@@ -83,9 +82,9 @@ class MatchCtrl {
             });
         });
 
-        $scope.$watch('selectedGraph', function(newval, oldval) {
-            if (newval !== oldval && vm.match) {
-                vm.regraph();
+        $scope.$watch('selectedGraph', (newval, oldval) => {
+            if (newval !== oldval && this.match) {
+                this.regraph();
             }
         });
 
@@ -109,11 +108,10 @@ class MatchCtrl {
         MG.data_graphic(options);
     }
     teamtotals() {
-        let vm = this;
-        vm.teamtotal = [{teamname: 'Legion'}, {teamname: 'Hellborne'}];
-        _.forEach(this.match.players, function(n) {
-            _.forEach(vm.options, function(j) {
-                vm.teamtotal[n.team-1][j.value] = (vm.teamtotal[n.team-1][j.value] || 0) + Number(n[j.value]);
+        this.teamtotal = [{teamname: 'Legion'}, {teamname: 'Hellborne'}];
+        _.forEach(this.match.players, n => {
+            _.forEach(this.options, j => {
+                this.teamtotal[n.team-1][j.value] = (this.teamtotal[n.team-1][j.value] || 0) + Number(n[j.value]);
             });
         });
     }
