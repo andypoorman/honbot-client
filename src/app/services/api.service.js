@@ -5,7 +5,7 @@ class ApiService {
         this.$analytics = $analytics;
         this.$http = $http;
         this.socket = socket;
-        
+
         this.host = BaseUrl.host;
 
         this.apiWatching = false;
@@ -15,7 +15,7 @@ class ApiService {
     }
     apiCalls(callback) {
         // keeps count of api calls to 
-        if(!this.apiWatching){
+        if (!this.apiWatching) {
             this.socket.on('api', function(data) {
                 callback(data);
             });
@@ -23,50 +23,67 @@ class ApiService {
         }
     }
     updates(callback) {
-        var that = this;
-        if(!this.updateWatching){
-            this.$analytics.eventTrack('api', {category: 'main', label: 'recentPlayers'});
+        if (!this.updateWatching) {
+            this.$analytics.eventTrack('api', {
+                category: 'main',
+                label: 'recentPlayers'
+            });
 
             // pull list of recent players
-            this.$http.get(`${this.host}/recentPlayers`).success((res)=>{
-                that.updatesList = that.updatesList.concat(res);
-                callback(that.updatesList);
+            this.$http.get(`${this.host}/recentPlayers`).success((res) => {
+                this.updatesList = this.updatesList.concat(res);
+                callback(this.updatesList);
             });
 
             // subscribe to new players being updated
             this.socket.on('update', function(data) {
-                that.updatesList.unshift(data);
-                that.updatesList = _.dropRight(that.updatesList);
-                callback(that.updatesList);
+                this.updatesList.unshift(data);
+                this.updatesList = _.dropRight(this.updatesList);
+                callback(this.updatesList);
             });
             this.updateWatching = true;
         }
         callback(this.updatesList);
     }
-    counts(){
-            this.$analytics.eventTrack('api', {category: 'main', label: 'counts'});
+    counts() {
+        this.$analytics.eventTrack('api', {
+            category: 'main',
+            label: 'counts'
+        });
         return this.$http.get(`${this.host}/counts`);
     }
     singlePlayer(nickname) {
         // return a single player stats
-        this.$analytics.eventTrack('api', {category: 'player', label: nickname});
+        this.$analytics.eventTrack('api', {
+            category: 'player',
+            label: nickname
+        });
         return this.$http({
             method: 'GET',
             url: `${this.host}/player/${nickname}`,
             cache: true
         });
     }
-    bulkPlayers(pids){
+    bulkPlayers(pids) {
         // takes list of playerid's and returns cached stats for each player
-        this.$analytics.eventTrack('api', {category: 'players', label: 'bulk'});
+        this.$analytics.eventTrack('api', {
+            category: 'players',
+            label: 'bulk'
+        });
         return this.$http.get(`${this.host}/bulkPlayers/${pids}`);
     }
     history(pid, mode, page) {
-        this.$analytics.eventTrack('api', {category: 'history', label: pid});
+        this.$analytics.eventTrack('api', {
+            category: 'history',
+            label: pid
+        });
         return this.$http.get(`${this.host}/history/${pid}/${page}/${mode}`);
     }
     match(id, callback, error) {
-        this.$analytics.eventTrack('api', {category: 'match', label: id});
+        this.$analytics.eventTrack('api', {
+            category: 'match',
+            label: id
+        });
         if (!this.matches[id]) {
             this.$http.get(`${this.host}/match/${id}`).success(res => {
                 if (res !== '') {
@@ -81,17 +98,19 @@ class ApiService {
         }
     }
     playerCache(pid, mode) {
-        this.$analytics.eventTrack('api', {category: 'playerCache', label: pid});
+        this.$analytics.eventTrack('api', {
+            category: 'playerCache',
+            label: pid
+        });
         return this.$http({
             method: 'GET',
-            url:`${this.host}/cache/${pid}/${mode}`,
+            url: `${this.host}/cache/${pid}/${mode}`,
             cache: true
         });
     }
-    saveMatches(data){
-        var that = this;
-        _.forEach(data, function(n){
-            that.matches[n.id] = n;
+    saveMatches(data) {
+        _.forEach(data, (n) => {
+            this.matches[n.id] = n;
         });
     }
 }
