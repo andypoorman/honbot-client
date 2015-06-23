@@ -43,7 +43,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 table-responsive">
+        <div class="col-xs-12">
             <table id="match" class="table" ng-repeat="(key, t) in [1, 2] track by $index">
                 <thead>
                     <tr>
@@ -95,9 +95,7 @@
                                ng-href="/item/{{ item }}/"
                                data-title="<span>{{ctrl.items[item].name}}</span> <span class='text-gold'>{{ctrl.items[item].cost}}</span>"
                                data-html="True"
-                               bs-tooltip>
-                                <img ng-src="assets/images/items/{{ item }}.jpg" width="30">
-                            </a>
+                               bs-tooltip><img ng-src="assets/images/items/{{ item }}.jpg" width="30"></a>
                         </td>
                         <td>{{ ::player.level }}</td>
                         <td>{{ ::player.kills }}</td>

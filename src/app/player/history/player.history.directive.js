@@ -26,43 +26,73 @@ class HistoryCtrl {
         this.mode = $routeParams.mode || 'rnk';
 
         this.historyPage = 0;
+        this.count = 0;
+        this.history = [];
+        this.mmr_history = [];
 
-        // trigger first load of player history
-        this.more();
+        ApiService.singlePlayer(this.nickname).success(res => {
+            this.curmmr = res[this.mode + '_amm_team_rating'] || res[this.mode + '_pub_skill'];
+            this.account_id = res.account_id;
+
+            // trigger first load of player history
+            this.more();
+        }).error(() => this.done());
     }
     goMatch(match) {
         this.$location.path(`/match/${match}`);
+    }
+    done() {
+        this.nomore = true;
+        this.loading = false;
     }
     more() {
         this.loading = true;
         this.historyPage += 1;
         this.ApiService.history(this.nickname, this.mode, this.historyPage).success(res => {
             if (res.length > 0) {
-                this.filterMatches(res, this.nickname);
+                this.filterMatches(res);
+                let options = {
+                    title: '',
+                    data: this.mmr_history,
+                    x_accessor: 'games_ago',
+                    y_accessor: 'mmr',
+                    full_width: true,
+                    x_axis: false,
+                    bottom: 0,
+                    top: 15,
+                    right: 5,
+                    left: 38,
+                    height: 200,
+                    target: '#mmr',
+                    min_y: _.min(this.mmr_history, 'mmr').mmr,
+                    max_y: _.max(this.mmr_history, 'mmr').mmr,
+                    area: false,
+                    yax_format: d3.format('')
+                };
+                MG.data_graphic(options);
+                this.ApiService.saveMatches(res);
             }
             if (res.length < 25) {
                 this.loading = false;
                 this.nomore = true;
             }
-            this.ApiService.saveMatches(res);
-        }).error(function() {
-            this.nomore = true;
-            this.loading = false;
-        });
+        }).error(() => this.done());
     }
-    filterMatches(matches, nickname) {
-        nickname = nickname.toLowerCase();
-        let history = this.history || [];
+    filterMatches(matches) {
+        let vm = this;
         _.forEach(matches, (n) => {
-            let temp = _.find(n.players, function(n) {
-                return n.nickname && nickname === n.nickname.toLowerCase();
-            });
+            let temp = _.find(n.players, n => n.player_id === vm.account_id);
             if (temp) {
                 temp.date = n.date;
-                history.push(temp);
+                vm.history.push(temp);
+                vm.mmr_history.push({
+                    games_ago: vm.count,
+                    mmr: vm.curmmr
+                });
+                vm.curmmr -= temp.mmr_change;
+                vm.count--;
             }
         });
-        this.history = history;
         this.loading = false;
     }
 }
