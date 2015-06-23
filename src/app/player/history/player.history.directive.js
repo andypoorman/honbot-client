@@ -79,18 +79,17 @@ class HistoryCtrl {
         }).error(() => this.done());
     }
     filterMatches(matches) {
-        let vm = this;
         _.forEach(matches, (n) => {
-            let temp = _.find(n.players, n => n.player_id === vm.account_id);
+            let temp = _.find(n.players, n => n.player_id === this.account_id);
             if (temp) {
                 temp.date = n.date;
-                vm.history.push(temp);
-                vm.mmr_history.push({
-                    games_ago: vm.count,
-                    mmr: vm.curmmr
+                this.history.push(temp);
+                this.mmr_history.push({
+                    games_ago: this.count,
+                    mmr: this.curmmr
                 });
-                vm.curmmr -= temp.mmr_change;
-                vm.count--;
+                this.curmmr -= temp.mmr_change;
+                this.count--;
             }
         });
         this.loading = false;
