@@ -24,6 +24,7 @@
     "MG": false,
     "adsbygoogle": false,
     "window": false,
+    "d3": false,
     // Angular Mocks
     "inject": false,
     "module": false,
