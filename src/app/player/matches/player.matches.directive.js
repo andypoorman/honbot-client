@@ -36,20 +36,18 @@ class PlayerMatchesCtrl {
             });
         });
 
-        let that = this;
-        $scope.$watchGroup(['selectedHero', 'selectedVersion'], function() {
-            if (that.issetup) {
-                that.filter();
+        $scope.$watchGroup(['selectedHero', 'selectedVersion'], () => {
+            if (this.issetup) {
+                this.filter();
             }
         });
     }
     setup(heroData) {
-        let that = this;
         let pulled = [];
         let heroes = {};
         let versions = {};
-        _.forEach(this.all, function(obj) {
-            let temp = _.find(obj.players, 'player_id', that.player.account_id);
+        _.forEach(this.all, (obj) => {
+            let temp = _.find(obj.players, 'player_id', this.player.account_id);
             if (temp) {
                 temp.date = moment(obj.date).toDate();
                 temp.length = obj.length;
@@ -71,9 +69,8 @@ class PlayerMatchesCtrl {
         this.versions = _.keys(versions);
     }
     filter() {
-        let that = this;
-        this.filtered = _.filter(this.pulled, function(n) {
-            if (that.filterHero(n.hero_id) && that.filterVersion(n.version)) {
+        this.filtered = _.filter(this.pulled, (n) => {
+            if (this.filterHero(n.hero_id) && this.filterVersion(n.version)) {
                 return n;
             }
         });
@@ -93,15 +90,14 @@ class PlayerMatchesCtrl {
     }
     totals() {
         let needed = ['length', 'kills', 'deaths', 'assists', 'cs', 'denies', 'gpm', 'xpm', 'apm', 'wards', 'herodmg', 'bdmg'];
-        let that = this;
-        that.averages = {};
-        _.forEach(this.filtered, function(n) {
-            _.forEach(needed, function(j) {
-                that.averages[j] = (that.averages[j] || 0) + Number(n[j]);
+        this.averages = {};
+        _.forEach(this.filtered, (n) => {
+            _.forEach(needed, (j) => {
+                this.averages[j] = (this.averages[j] || 0) + Number(n[j]);
             });
         });
-        _.forEach(needed, function(j) {
-            that.averages[j] = that.averages[j] / that.filtered.length;
+        _.forEach(needed, (j) => {
+            this.averages[j] = this.averages[j] / this.filtered.length;
         });
         this.averages.length = moment.duration(this.averages.length, 'seconds').format();
     }

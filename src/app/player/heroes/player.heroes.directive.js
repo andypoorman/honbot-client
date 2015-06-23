@@ -40,10 +40,9 @@ class PlayerHeroesCtrl {
             });
         });
 
-        let that = this;
-        $scope.$watchGroup(['selectedDuration', 'selectedVersion'], function() {
-            if (that.issetup) {
-                that.filter();
+        $scope.$watchGroup(['selectedDuration', 'selectedVersion'], () => {
+            if (this.issetup) {
+                this.filter();
             }
         });
     }
@@ -77,11 +76,10 @@ class PlayerHeroesCtrl {
     }
     setup() {
         let tempHeroes = [];
-        let pid = this.player.account_id;
 
         // totals
-        _.forEach(this.filtered, function(obj) {
-            let temp = _.find(obj.players, 'player_id', pid);
+        _.forEach(this.filtered, obj => {
+            let temp = _.find(obj.players, 'player_id', this.player.account_id);
             let s = (tempHeroes[temp.hero_id])? tempHeroes[temp.hero_id] : tempHeroes[temp.hero_id] = {};
             s.games = s.games + 1 || 1;
             s.hero_id = temp.hero_id;
@@ -96,7 +94,7 @@ class PlayerHeroesCtrl {
         tempHeroes = _.compact(tempHeroes);
 
         // averages
-        _.forEach(tempHeroes, function(obj){
+        _.forEach(tempHeroes, obj => {
             obj.avgDeaths = obj.deaths / obj.games;
             obj.avgKills = obj.kills / obj.games;
             obj.avgAssists = obj.assists / obj.games;
