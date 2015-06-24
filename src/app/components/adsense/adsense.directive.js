@@ -18,7 +18,7 @@ class adsense {
             setTimeout(function() {
                 let adsbygoogle = window.adsbygoogle || [];
                 adsbygoogle.push({});
-            }, 0);
+            }, 10);
         }
     }
 }
