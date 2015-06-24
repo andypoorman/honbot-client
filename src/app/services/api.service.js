@@ -36,7 +36,7 @@ class ApiService {
             });
 
             // subscribe to new players being updated
-            this.socket.on('update', function(data) {
+            this.socket.on('update', (data) => {
                 this.updatesList.unshift(data);
                 this.updatesList = _.dropRight(this.updatesList);
                 callback(this.updatesList);
