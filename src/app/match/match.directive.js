@@ -20,8 +20,8 @@ class MatchCtrl {
         'ngInject';
 
         this.heroData = {};
-        this.team1 = {};
-        this.team2 = {};
+        this.t1Win = 0;
+        this.t2Win = 0;
         this.ptips = {};
         this.items = itemList;
         this.matchid = $routeParams.match;
@@ -113,6 +113,7 @@ class MatchCtrl {
             _.forEach(this.options, j => {
                 this.teamtotal[n.team-1][j.value] = (this.teamtotal[n.team-1][j.value] || 0) + Number(n[j.value]);
             });
+            this[`t${n.team}Win`] += n.win;
         });
     }
 }
