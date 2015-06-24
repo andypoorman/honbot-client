@@ -44,7 +44,7 @@ class MatchCtrl {
             {value: 'xpm', label: 'XPM'},
             {value: 'wards', label: 'Wards'},
             {value: 'herodmg', label: 'Hero Damage'},
-            {value: 'bdmg', label: 'Kills'},
+            {value: 'bdmg', label: 'Building DMG'},
             {value: 'level', label: 'Level'},
         ];
         $scope.selectedGraph = this.options[5];
