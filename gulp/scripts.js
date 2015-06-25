@@ -12,8 +12,8 @@ function webpack(watch, callback) {
   var webpackOptions = {
     watch: watch,
     module: {
-      preLoaders: [{ test: /\.js$/, exclude: /node_modules/, loader: 'jshint-loader'}],
-      loaders: [{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}]
+      preLoaders: [{ test: /\.js$/, exclude: /(node_modules|bower_components)/, loader: 'jshint-loader'}],
+      loaders: [{ test: /\.js$/, exclude: /(node_modules|bower_components)/, loader: 'babel-loader?optional[]=runtime'}]
     },
     output: { filename: 'index.module.js' }
   };
