@@ -109,12 +109,12 @@ class MatchCtrl {
     }
     teamtotals() {
         this.teamtotal = [{teamname: 'Legion'}, {teamname: 'Hellborne'}];
-        _.forEach(this.match.players, n => {
-            _.forEach(this.options, j => {
+        for (let n of this.match.players) {
+            for (let j of this.options) {
                 this.teamtotal[n.team-1][j.value] = (this.teamtotal[n.team-1][j.value] || 0) + Number(n[j.value]);
-            });
+            }
             this[`t${n.team}Win`] += n.win;
-        });
+        }
     }
 }
 
