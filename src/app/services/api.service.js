@@ -70,7 +70,11 @@ class ApiService {
             category: 'players',
             label: 'bulk'
         });
-        return this.$http.get(`${this.host}/bulkPlayers/${pids}`);
+        return this.$http({
+            method: 'GET',
+            url:`${this.host}/bulkPlayers/${pids}`,
+            cache: true
+        });
     }
     history(pid, mode, page) {
         this.$analytics.eventTrack('api', {
