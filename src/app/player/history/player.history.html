@@ -1,4 +1,3 @@
-<div id="mmr"></div>
 <div class="table-responsive">
     <table id="history" class="table table-header table-condensed">
         <thead>
@@ -16,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="match in ctrl.history track by match.match_id" ng-click="ctrl.goMatch(match.match_id)" ng-class="{matchloss: !match.win, matchwin: match.win}">
+            <tr ng-repeat="match in ctrl.history track by match.match_id" ng-click="ctrl.MatchService.goMatch(match.match_id, $event)" ng-class="{matchloss: !match.win, matchwin: match.win}">
                 <td><img ng-src="//www.heroesofnewerth.com/images/heroes/{{ ::match.hero_id }}/icon_128.jpg" width="30">{{ ::match.level }}</td>
                 <td>{{ ::match.kills }}</td>
                 <td>{{ ::match.deaths }}</td>

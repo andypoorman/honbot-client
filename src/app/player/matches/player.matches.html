@@ -3,7 +3,7 @@
     <div class="col-xs-12">
         <button type="button" placeholder="Heroes" class="btn btn-default" ng-model="selectedHero" data-multiple="true" data-sort="false" bs-options="hero.value as hero.label for hero in ctrl.heroes" bs-select>
         </button>
-        <button type="button" placeholder="Versions" class="btn btn-default" ng-model="selectedVersion" data-multiple="true" data-sort="false" bs-options="version for version in ctrl.versions" bs-select>
+        <button type="button" placeholder="Versions" class="btn btn-default" ng-model="selectedVersion" data-multiple="true" data-sort="true" bs-options="version for version in ctrl.versions" bs-select>
         </button>
     </div>
 </div>
@@ -71,6 +71,11 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
+        <div id="mmr"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
         <div class="table-responsive">
             <table id="history" class="table table-header table-condensed">
                 <thead>
@@ -91,7 +96,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="match in ctrl.filtered | orderBy:'-date' | limitTo:100 track by match.match_id" ng-click="ctrl.goMatch(match.match_id)" ng-class="{matchloss: !match.win, matchwin: match.win}">
+                    <tr ng-repeat="match in ctrl.filtered | limitTo:100 track by match.match_id" ng-click="ctrl.MatchService.goMatch(match.match_id)" ng-class="{matchloss: !match.win, matchwin: match.win}">
                         <td><img ng-src="//www.heroesofnewerth.com/images/heroes/{{ ::match.hero_id }}/icon_128.jpg" width="30">{{ ::match.level }}</td>
                         <td>{{ ::match.kills }}</td>
                         <td>{{ ::match.deaths }}</td>

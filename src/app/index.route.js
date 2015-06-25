@@ -18,6 +18,9 @@ function routerConfig($routeProvider) {
         .when('/player/:player/items/', {
             templateUrl: 'app/player/views/player.items.html',
         })
+        .when('/player/:player/trends/', {
+            templateUrl: 'app/player/views/player.trends.html',
+        })
         .when('/match/:match/', {
             templateUrl: 'app/match/match.view.html',
         })

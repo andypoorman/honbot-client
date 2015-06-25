@@ -16,11 +16,11 @@ class PlayerHistoryDirective {
 }
 
 class HistoryCtrl {
-    constructor($routeParams, ApiService, $location) {
+    constructor($routeParams, ApiService, MatchService) {
         'ngInject';
 
-        this.$location = $location;
         this.ApiService = ApiService;
+        this.MatchService = MatchService;
 
         this.nickname = $routeParams.player;
         this.mode = $routeParams.mode || 'rnk';
@@ -38,9 +38,6 @@ class HistoryCtrl {
             this.more();
         }).error(() => this.done());
     }
-    goMatch(match) {
-        this.$location.path(`/match/${match}`);
-    }
     done() {
         this.nomore = true;
         this.loading = false;
@@ -51,25 +48,6 @@ class HistoryCtrl {
         this.ApiService.history(this.nickname, this.mode, this.historyPage).success(res => {
             if (res.length > 0) {
                 this.filterMatches(res);
-                let options = {
-                    title: '',
-                    data: this.mmr_history,
-                    x_accessor: 'games_ago',
-                    y_accessor: 'mmr',
-                    full_width: true,
-                    x_axis: false,
-                    bottom: 0,
-                    top: 15,
-                    right: 5,
-                    left: 38,
-                    height: 200,
-                    target: '#mmr',
-                    min_y: _.min(this.mmr_history, 'mmr').mmr,
-                    max_y: _.max(this.mmr_history, 'mmr').mmr,
-                    area: false,
-                    yax_format: d3.format('')
-                };
-                MG.data_graphic(options);
                 this.ApiService.saveMatches(res);
             }
             if (res.length < 25) {
@@ -80,16 +58,10 @@ class HistoryCtrl {
     }
     filterMatches(matches) {
         _.forEach(matches, (n) => {
-            let temp = _.find(n.players, n => n.player_id === this.account_id);
+            let temp = _.find(n.players, 'player_id', this.account_id);
             if (temp) {
                 temp.date = n.date;
                 this.history.push(temp);
-                this.mmr_history.push({
-                    games_ago: this.count,
-                    mmr: this.curmmr
-                });
-                this.curmmr -= temp.mmr_change;
-                this.count--;
             }
         });
         this.loading = false;
