@@ -26,17 +26,10 @@ class HistoryCtrl {
         this.mode = $routeParams.mode || 'rnk';
 
         this.historyPage = 0;
-        this.count = 0;
         this.history = [];
-        this.mmr_history = [];
+        this.loading = true;
 
-        ApiService.singlePlayer(this.nickname).success(res => {
-            this.curmmr = res[this.mode + '_amm_team_rating'] || res[this.mode + '_pub_skill'];
-            this.account_id = res.account_id;
-
-            // trigger first load of player history
-            this.more();
-        }).error(() => this.done());
+        this.more();
     }
     done() {
         this.nomore = true;
@@ -46,11 +39,12 @@ class HistoryCtrl {
         this.loading = true;
         this.historyPage += 1;
         this.ApiService.history(this.nickname, this.mode, this.historyPage).success(res => {
-            if (res.length > 0) {
-                this.filterMatches(res);
-                this.ApiService.saveMatches(res);
+            this.account_id = res.account_id;
+            if (res.history.length > 0) {
+                this.filterMatches(res.history);
+                this.ApiService.saveMatches(res.history);
             }
-            if (res.length < 25) {
+            if (res.history.length < 25) {
                 this.loading = false;
                 this.nomore = true;
             }

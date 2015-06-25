@@ -48,11 +48,11 @@ class PlayerItemsCtrl {
         });
     }
     filtersetup(){
-        let tempversions = [];
-        _.forEach(this.all, function(obj) {
-            tempversions.push(obj.version);
-        });
-        this.versions = _.uniq(tempversions);
+        let tempversions = new Set();
+        for (let obj of this.all) {
+            tempversions.add(obj.version);
+        }
+        this.versions = Array.from(tempversions);
     }
     filter() {
         let temp = this.all;
@@ -80,9 +80,9 @@ class PlayerItemsCtrl {
         let pid = this.player.account_id;
 
         // totals
-        _.forEach(this.filtered, function(obj) {
+        for (let obj of this.filtered) {
             let temp = _.find(obj.players, 'player_id', pid);
-            _.forEach(_.uniq(temp.items), function(item){
+            for (let item of _.uniq(temp.items)) {
                 let s = (tempItems[item])? tempItems[item] : tempItems[item] = {};
                 s.item_id = item;
                 s.games = s.games + 1 || 1;
@@ -93,12 +93,12 @@ class PlayerItemsCtrl {
                 s.gpm = s.gpm + Number(temp.gpm) || Number(temp.gpm);
                 s.apm = s.apm + Number(temp.apm) || Number(temp.apm);
                 s.xpm = s.xpm + Number(temp.xpm) || Number(temp.xpm);
-            });
-        });
+            }
+        }
         tempItems = _.compact(tempItems);
 
         // averages
-        _.forEach(tempItems, function(obj){
+        for (let obj of tempItems) {
             obj.avgDeaths = obj.deaths / obj.games;
             obj.avgKills = obj.kills / obj.games;
             obj.avgAssists = obj.assists / obj.games;
@@ -107,7 +107,7 @@ class PlayerItemsCtrl {
             obj.avgXPM = obj.xpm / obj.games;
             obj.kdr = obj.kills / obj.deaths;
             obj.kda = (obj.kills + obj.assists) / obj.deaths;
-        });
+        }
         this.items = _.compact(tempItems);
     }
     goMatch(match) {
