@@ -108,7 +108,7 @@ class PlayerItemsCtrl {
             obj.kdr = obj.kills / obj.deaths;
             obj.kda = (obj.kills + obj.assists) / obj.deaths;
         }
-        this.items = _.compact(tempItems);
+        this.items = tempItems;
     }
     goMatch(match) {
         this.$location.path(`/match/${match}`);

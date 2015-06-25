@@ -62,9 +62,9 @@ class MatchCtrl {
             if (res.players) {
                 var pids = _.pluck(res.players, 'player_id').join(',');
                 ApiService.bulkPlayers(pids).success(res => {
-                    _.forEach(res, (n) => {
+                    for (let n of res) {
                         this.ptips[n.account_id] = n;
-                    });
+                    }
                 });
             }
 

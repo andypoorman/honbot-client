@@ -113,9 +113,9 @@ class ApiService {
         });
     }
     saveMatches(data) {
-        _.forEach(data, (n) => {
+        for (let n of data) {
             this.matches[n.id] = n;
-        });
+        }
     }
 }
 
