@@ -1,4 +1,4 @@
-function config($logProvider, $locationProvider, $numeraljsConfigProvider, $cookiesProvider, $sceProvider) {
+function config($logProvider, $locationProvider, $numeraljsConfigProvider, $cookiesProvider, $sceProvider, cfpLoadingBarProvider) {
     'ngInject';
     // Enable log
     $logProvider.debugEnabled(true);
@@ -8,6 +8,7 @@ function config($logProvider, $locationProvider, $numeraljsConfigProvider, $cook
     $cookiesProvider.defaults.expires = moment().add(99, 'years').toISOString();
 
     $sceProvider.enabled(false);
+    cfpLoadingBarProvider.includeSpinner = false;
 }
 
 

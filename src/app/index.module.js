@@ -36,7 +36,8 @@ angular.module('client', [
         'btford.socket-io',
         'ngNumeraljs',
         'angulartics',
-        'angulartics.google.analytics'
+        'angulartics.google.analytics',
+        'angular-loading-bar'
     ])
     .constant('largeHero', largeHero)
     .constant('itemList', itemList)
