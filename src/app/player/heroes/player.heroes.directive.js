@@ -25,7 +25,7 @@ class PlayerHeroesCtrl {
         this.$scope = $scope;
         this.heroData = heroData;
 
-        this.durations = [{value: 0, label: 'Any'},{value: 600, label: '> 10 min'}, {value: 900, label: '> 15 min'},  {value: 1800, label: '> 30 min'},  {value: 2400, label: '> 40 min'}];
+        this.durations = [{value: 0, label: 'Any'}, {value: 600, label: '> 10 min'}, {value: 900, label: '> 15 min'}, {value: 1800, label: '> 30 min'},  {value: 2400, label: '> 40 min'}];
 
         this.activate(ApiService, $alert, $scope);
     }
@@ -105,9 +105,6 @@ class PlayerHeroesCtrl {
             obj.kda = (obj.kills + obj.assists) / obj.deaths;
         });
         this.heroes = _.compact(tempHeroes);
-    }
-    goMatch(match) {
-        this.$location.path(`/match/${match}`);
     }
 }
 
