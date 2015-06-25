@@ -57,13 +57,13 @@ class HistoryCtrl {
         }).error(() => this.done());
     }
     filterMatches(matches) {
-        _.forEach(matches, (n) => {
+        for (let n of matches) {
             let temp = _.find(n.players, 'player_id', this.account_id);
             if (temp) {
                 temp.date = n.date;
                 this.history.push(temp);
             }
-        });
+        }
         this.loading = false;
     }
 }
