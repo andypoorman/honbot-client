@@ -72,8 +72,7 @@ class ApiService {
         });
         return this.$http({
             method: 'GET',
-            url:`${this.host}/bulkPlayers/${pids}`,
-            cache: true
+            url:`${this.host}/bulkPlayers/${pids}`
         });
     }
     history(pid, mode, page) {
